@@ -6,3 +6,10 @@ Description: Given a circular array of strings, a starting point, and
 a word to look for, We need to return the shortest distance
 from our starting point to the word we need to search for.
 */
+
+class Solution {
+public:
+    int closestTarget(vector<string>& words, string target, int startIndex) {
+        
+    }
+};
