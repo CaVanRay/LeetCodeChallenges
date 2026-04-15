@@ -26,9 +26,13 @@ public:
                 return 0;
             }else{
                 if(it < startIndex){
-                    
+                    minimalDistance = startIndex - it;
+                    minimalDistance = min(minimalDistance, (fullSize - startIndex + it);
+                    return minimalDistance;
                 }else{
-                    
+                    minimalDistance = it - startIndex;
+                    minimalDistance = min(minimalDistance, (fullSize - it + startIndex);
+                    return minimalDistance;
                 }
             }
         }else{
