@@ -17,11 +17,20 @@ index and the string we are searching for
 class Solution {
 public:
     int closestTarget(vector<string>& words, string target, int startIndex) {
-        int totalSize = words.size();
+        int fullSize = words.size();
         int minimalDistance;
+        
         auto it = std::find(words.begin(), words.end(), target);
-        if(if != words.end()){
-            
+        if(it != words.end()){
+            if(it == startIndex){
+                return 0;
+            }else{
+                if(it < startIndex){
+                    
+                }else{
+                    
+                }
+            }
         }else{
             return -1;
         }
