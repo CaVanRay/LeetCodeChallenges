@@ -21,17 +21,18 @@ public:
         int minimalDistance;
         
         auto it = std::find(words.begin(), words.end(), target);
+        int idx = std::distance(words.begin(), it);
         if(it != words.end()){
-            if(it == startIndex){
+            if(idx == startIndex){
                 return 0;
             }else{
-                if(it < startIndex){
-                    minimalDistance = startIndex - it;
-                    minimalDistance = min(minimalDistance, (fullSize - startIndex + it);
+                if(idx < startIndex){
+                    minimalDistance = startIndex - idx;
+                    minimalDistance = min(minimalDistance, (fullSize - startIndex + idx));
                     return minimalDistance;
                 }else{
-                    minimalDistance = it - startIndex;
-                    minimalDistance = min(minimalDistance, (fullSize - it + startIndex);
+                    minimalDistance = idx - startIndex;
+                    minimalDistance = min(minimalDistance, (fullSize - idx + startIndex));
                     return minimalDistance;
                 }
             }
