@@ -21,6 +21,7 @@ public:
         int minimalDistance = words.size();
         for(int i = 0; i < words.size(); i++){
             if(words[i] == target){
+                wordWasFound = true;
                 if(i < startIndex){
                     minimalDistance = min(minimalDistance, (startIndex - i));
                     minimalDistance = min(minimalDistance, (fullSize - startIndex + i));
