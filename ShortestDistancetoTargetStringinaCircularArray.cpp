@@ -18,7 +18,7 @@ class Solution {
 public:
     int closestTarget(vector<string>& words, string target, int startIndex){
         bool wordWasFound = false;
-        int minimalDistance = words.size();
+        int fullSize = words.size(), minimalDistance = words.size();
         for(int i = 0; i < words.size(); i++){
             if(words[i] == target){
                 wordWasFound = true;
