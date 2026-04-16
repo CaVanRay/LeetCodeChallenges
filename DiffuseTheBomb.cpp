@@ -2,7 +2,7 @@
 Title: Diffuse The Bomb
 Author: Cavan Ray Theiss
 
-Description:
+Description: decrypt the code to diffuse the bomb
 
 */
 
