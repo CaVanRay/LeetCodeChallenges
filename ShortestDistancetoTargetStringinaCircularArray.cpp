@@ -22,11 +22,11 @@ public:
         for(int i = 0; i < words.size(); i++){
             if(words[i] == target){
                 if(i < startIndex){
-                    minimalDistance = startIndex - idx;
-                    minimalDistance = min(minimalDistance, (fullSize - startIndex + idx));
+                    minimalDistance = startIndex - i;
+                    minimalDistance = min(minimalDistance, (fullSize - startIndex + i));
                 }else{
-                    minimalDistance = idx - startIndex;
-                    minimalDistance = min(minimalDistance, (fullSize - idx + startIndex));
+                    minimalDistance = i - startIndex;
+                    minimalDistance = min(minimalDistance, (fullSize - i + startIndex));
                 }
             }
         }
