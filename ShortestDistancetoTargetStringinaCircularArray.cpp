@@ -17,7 +17,7 @@ index and the string we are searching for
 class Solution {
 public:
     int closestTarget(vector<string>& words, string target, int startIndex){
-        int fullSize = words.size();
+        bool wordWasFound = false;
         int minimalDistance = words.size();
         for(int i = 0; i < words.size(); i++){
             if(words[i] == target){
