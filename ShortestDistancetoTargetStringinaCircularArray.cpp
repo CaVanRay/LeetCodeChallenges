@@ -18,7 +18,10 @@ class Solution {
 public:
     int closestTarget(vector<string>& words, string target, int startIndex){
         int fullSize = words.size();
-        int minimalDistance;
+        int minimalDistance = words.size();
+        for(int i = 0; i < words.size(); i++){
+            if
+        }
     }
 };
 
