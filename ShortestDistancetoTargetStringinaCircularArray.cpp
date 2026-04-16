@@ -19,7 +19,7 @@ public:
     int closestTarget(vector<string>& words, string target, int startIndex){
         bool wordWasFound = false;
         int fullSize = words.size(), minimalDistance = words.size();
-        for(int i = 0; i < words.size(); i++){
+        for(int i = 0; i < fullSize; i++){
             if(words[i] == target){
                 wordWasFound = true;
                 if(i < startIndex){
