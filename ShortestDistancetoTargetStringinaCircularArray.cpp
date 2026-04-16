@@ -20,7 +20,9 @@ public:
         int fullSize = words.size();
         int minimalDistance = words.size();
         for(int i = 0; i < words.size(); i++){
-            if
+            if(words[i] == target){
+                
+            }
         }
     }
 };
