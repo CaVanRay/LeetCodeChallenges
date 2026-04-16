@@ -31,7 +31,11 @@ public:
                 }
             }
         }
-        return minimalDistance;
+        if(wordWasFound){
+            return minimalDistance;
+        }else{
+            return -1;
+        }
     }
 };
 
