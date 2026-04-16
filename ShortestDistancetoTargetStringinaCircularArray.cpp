@@ -15,6 +15,11 @@ index and the string we are searching for
 */
 
 class Solution {
+
+};
+
+/*
+class Solution {
 public:
     int closestTarget(vector<string>& words, string target, int startIndex) {
         int fullSize = words.size();
@@ -42,3 +47,4 @@ public:
         
     }
 };
+*/
