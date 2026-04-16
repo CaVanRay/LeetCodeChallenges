@@ -15,7 +15,10 @@ index and the string we are searching for
 */
 
 class Solution {
-
+public:
+    int closestTarget(vector<string>& words, string target, int startIndex){
+        
+    }
 };
 
 /*
