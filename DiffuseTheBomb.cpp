@@ -1,5 +1,6 @@
 /*
 Title: Diffuse The Bomb
+Author: Cavan Ray Theiss
 */
 
 class Solution {
