@@ -21,9 +21,16 @@ public:
         int minimalDistance = words.size();
         for(int i = 0; i < words.size(); i++){
             if(words[i] == target){
-                
+                if(i < startIndex){
+                    minimalDistance = startIndex - idx;
+                    minimalDistance = min(minimalDistance, (fullSize - startIndex + idx));
+                }else{
+                    minimalDistance = idx - startIndex;
+                    minimalDistance = min(minimalDistance, (fullSize - idx + startIndex));
+                }
             }
         }
+        return minimalDistance;
     }
 };
 
