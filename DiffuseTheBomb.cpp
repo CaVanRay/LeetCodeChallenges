@@ -20,7 +20,9 @@ public:
         }else if(k < 0){
             
         }else{
-            
+            for(int i = 0; i < code.size(); i++){
+                code[i] = 0;
+            }
         }
     }
 };
