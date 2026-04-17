@@ -15,7 +15,7 @@ The array is circular, so when you reach the end it goes back to the beginning
 class Solution {
 public:
     vector<int> decrypt(vector<int>& code, int k) {
-        switch(k){
+        if(k > 0){
             
         }
     }
