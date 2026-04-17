@@ -17,6 +17,8 @@ public:
     vector<int> decrypt(vector<int>& code, int k) {
         if(k > 0){
             
+        }else if(k < 0){
+            
         }
     }
 };
