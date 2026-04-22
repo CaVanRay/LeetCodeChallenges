@@ -17,6 +17,11 @@ public:
     vector<int> decrypt(vector<int>& code, int k) {
         vector<int> decrypted;
         if(k > 0){
+            for(int j = 0; j < code.size(); j++){
+                for(int m = 0; m < k; m++){
+                    
+                }
+            }
             
         }else if(k < 0){
             
