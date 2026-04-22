@@ -30,6 +30,17 @@ public:
             }
             
         }else if(k < 0){
+                for(int d = 0; d < code.size(); d++){
+                    int sum = 0
+                    for(int l = 1; l < k; l++){
+                        if(d+l < code.size()){
+                            sum = sum + code[d + l];
+                        }else{
+                            sum = sum + code[l-(code.size()-d)];
+                        }
+                    }
+                    decrypted[d] = sum;
+                }
             
         }else{
             for(int i = 0; i < code.size(); i++){
