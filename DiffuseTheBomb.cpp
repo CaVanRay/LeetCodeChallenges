@@ -24,5 +24,7 @@ public:
                 code[i] = 0;
             }
         }
+
+        return decrypted;
     }
 };
