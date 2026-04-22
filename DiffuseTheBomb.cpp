@@ -36,7 +36,7 @@ public:
                         if(d+l >= 0){
                             sum = sum + code[d + l];
                         }else{
-                            sum = sum + code[l-(code.size()-d)];
+                            sum = sum + code[code.size()-(d+l)];
                         }
                     }
                     decrypted[d] = sum;
