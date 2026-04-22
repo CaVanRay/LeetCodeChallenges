@@ -17,10 +17,16 @@ public:
     vector<int> decrypt(vector<int>& code, int k) {
         vector<int> decrypted;
         if(k > 0){
-            for(int j = 0; j < code.size(); j++){
-                for(int m = 0; m < k; m++){
-                    
+            for(int d = 0; d < code.size(); d++){
+                int sum = 0
+                for(int l = 1; l < k; l++){
+                    if(d+l < code.size()){
+                        sum = sum + code[d + l];
+                    }else{
+                        
+                    }
                 }
+                decrypted[d] = sum;
             }
             
         }else if(k < 0){
