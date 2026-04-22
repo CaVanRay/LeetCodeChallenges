@@ -33,7 +33,7 @@ public:
             
         }else{
             for(int i = 0; i < code.size(); i++){
-                code[i] = 0;
+                decrypted[i] = 0;
             }
         }
 
