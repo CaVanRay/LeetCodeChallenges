@@ -18,7 +18,7 @@ public:
         vector<int> decrypted(code.size());
         if(k > 0){
             for(int d = 0; d < code.size(); d++){
-                int sum = 0
+                int sum = 0;
                 for(int l = 1; l < k; l++){
                     if(d+l < code.size()){
                         sum = sum + code[d + l];
@@ -31,7 +31,7 @@ public:
             
         }else if(k < 0){
                 for(int d = 0; d < code.size(); d++){
-                    int sum = 0
+                    int sum = 0;
                     for(int l = 1; l < k; l++){
                         if(d+l < code.size()){
                             sum = sum + code[d + l];
