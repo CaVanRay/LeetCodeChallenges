@@ -49,26 +49,10 @@ public:
         }
 
         if(!countBuckets.empty()){
+
+        // moving left to right, using 2 counters, figure out the cost of
+        // "making this the split point between all a's and all b's"
             
-            if(s[0] == 'a'){
-                isA = true;
-            }else{
-                isA = false;
-            }
-        
-            while(countBuckets.size() > 2){
-                if(!isA){
-                    removals += countBuckets[0];
-                    countBuckets.erase(countBuckets.begin());
-                }
-                if(countBuckets.size() >= 3){
-                    if(countBuckets[1] < countBuckets[2]){
-                        removals += countBuckets[1];
-                        countBuckets[0] += countBuckets[2];
-                        countBuckets.erase(countBuckets.begin() + 1, countBuckets.begin() + 3);
-                    }
-                }
-            }
         }
         return removals;
     }
