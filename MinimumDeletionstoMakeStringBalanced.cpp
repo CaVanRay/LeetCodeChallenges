@@ -21,6 +21,10 @@ class Solution {
 public:
     int minimumDeletions(string s) {
 
+    if(s.size() == 1){
+        return 0;
+    }
+
     int preBs = 0, postAs = 0, lowestRemovals = INT_MAX;
         for(int i = s.size() - 1; i >= 0; i--){ // i = the boundry between left and right side at each possible location
             for(int k = s.size() - 1; k >= 0; k--){ // k runs through and counts how many are on each side
