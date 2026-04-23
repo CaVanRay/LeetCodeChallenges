@@ -21,7 +21,7 @@ class Solution {
 public:
     int minimumDeletions(string s) {
 
-        int count;
+        int count = 0, removals = 0;
         bool isA = true;
         vector<int> countBuckets;
 
@@ -47,6 +47,29 @@ public:
                 }
             }
         }
+
+        if(!countBuckets.empty()){
+            
+            if(s[0] == 'a'){
+                isA = true;
+            }else{
+                isA = false;
+            }
         
+            while(countBuckets.size() > 2){
+                if(!isA){
+                    removals += countBuckets[0];
+                    countBuckets.erase(countBuckets.begin());
+                }
+                if(countBuckets.size() >= 3){
+                    if(countBuckets[1] < countBuckets[2]){
+                        removals += countBuckets[1];
+                        countBuckets[0] += countBuckets[2];
+                        countBuckets.erase(countBuckets.begin() + 1, countBuckets.begin() + 3);
+                    }
+                }
+            }
+        }
+        return removals;
     }
 };
