@@ -24,6 +24,7 @@ public:
         int count = 0, removals = 0;
         bool isA = true;
         vector<int> countBuckets;
+        std::vector<char> bucketLabels;
 
         for(int i = 0; i < s.size(); i++){
             if(s[i] == 'a'){
@@ -33,6 +34,7 @@ public:
                     count++;
                 }else{
                     countBuckets.push_back(count);
+                    bucketLabels.puch_back('a');
                     count = 1;
                 }
             }else{
@@ -43,17 +45,30 @@ public:
                     count++;
                 }else{
                     countBuckets.push_back(count);
+                    bucketLabels.push_back('b');
                     count = 1;
                 }
             }
         }
 
         if(!countBuckets.empty()){
-
+            int preBs = 0, postAs = 0, lowestRemovals = 50;
+            for(int j = countBuckets.size() - 1; j >= 0; j--){
+                for(int k = countBuckets.size() - 1; k >= 0; k--){
+                    if(k >= j && bucketLabels[k] == 'a'){
+                        postAs += countBuckets[k];
+                    }else if(k < j && bucketLabels[k] == 'b'){
+                        preBs += countBuckets[k];
+                    }
+                }
+                if(preBs + postAs < lowestRemovals){
+                    lowestRemovals = preBs + postAs;
+                }
+            }
         // moving left to right, using 2 counters, figure out the cost of
         // "making this the split point between all a's and all b's"
             
         }
-        return removals;
+        return lowestRemovals;
     }
 };
