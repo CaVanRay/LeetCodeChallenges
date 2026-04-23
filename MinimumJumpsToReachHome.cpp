@@ -18,3 +18,10 @@ Given an array of integers forbidden, where forbidden[i] means that the bug cann
 and integers a, b, and x, return the minimum number of jumps needed for the bug to reach its home. If there is no 
 possible sequence of jumps that lands the bug on position x, return -1.
 */
+
+class Solution {
+public:
+    int minimumJumps(vector<int>& forbidden, int a, int b, int x) {
+        
+    }
+};
