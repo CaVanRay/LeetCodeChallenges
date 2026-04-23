@@ -34,7 +34,7 @@ public:
                     count++;
                 }else{
                     countBuckets.push_back(count);
-                    bucketLabels.puch_back('a');
+                    bucketLabels.push_back('a');
                     count = 1;
                 }
             }else{
