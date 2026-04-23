@@ -21,7 +21,7 @@ class Solution {
 public:
     int minimumDeletions(string s) {
 
-        int count = 0, removals = 0;
+        int count = 0, lowestRemovals = 0;
         bool isA = true;
         vector<int> countBuckets;
         std::vector<char> bucketLabels;
@@ -52,7 +52,7 @@ public:
         }
 
         if(!countBuckets.empty()){
-            int preBs = 0, postAs = 0, lowestRemovals = 50;
+            int preBs = 0, postAs = 0;
             for(int j = countBuckets.size() - 1; j >= 0; j--){
                 for(int k = countBuckets.size() - 1; k >= 0; k--){
                     if(k >= j && bucketLabels[k] == 'a'){
