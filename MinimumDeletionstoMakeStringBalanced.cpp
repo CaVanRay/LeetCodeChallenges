@@ -21,54 +21,21 @@ class Solution {
 public:
     int minimumDeletions(string s) {
 
-        int count = 0, lowestRemovals = 0;
-        bool isA = true;
-        vector<int> countBuckets;
-        std::vector<char> bucketLabels;
-
-        for(int i = 0; i < s.size(); i++){
-            if(s[i] == 'a'){
-                if(i == 0){
-                    count++;
-                }else if(isA){
-                    count++;
-                }else{
-                    countBuckets.push_back(count);
-                    bucketLabels.push_back('a');
-                    count = 1;
-                }
-            }else{
-                if(i == 0){
-                    count++;
-                    isA = false;
-                }else if(!isA){
-                    count++;
-                }else{
-                    countBuckets.push_back(count);
-                    bucketLabels.push_back('b');
-                    count = 1;
+    int preBs = 0, postAs = 0, lowestRemovals = INT_MAX;
+        for(int i = s.size() - 1; i >= 0; i--){ // i = the boundry between left and right side at each possible location
+            for(int k = s.size() - 1; k >= 0; k--){ // k runs through and counts how many are on each side
+                if(k >= i && s[k] == 'a'){
+                    postAs++;
+                }else if(k < i && s[k] == 'b'){
+                    preBs++;
                 }
             }
-        }
-
-        if(!countBuckets.empty()){
-            int preBs = 0, postAs = 0;
-            for(int j = countBuckets.size() - 1; j >= 0; j--){
-                for(int k = countBuckets.size() - 1; k >= 0; k--){
-                    if(k >= j && bucketLabels[k] == 'a'){
-                        postAs += countBuckets[k];
-                    }else if(k < j && bucketLabels[k] == 'b'){
-                        preBs += countBuckets[k];
-                    }
-                }
-                if(preBs + postAs < lowestRemovals){
-                    lowestRemovals = preBs + postAs;
-                }
+            if(postAs + preBs < lowestRemovals){
+                lowestRemovals = postAs + preBs;
             }
-        // moving left to right, using 2 counters, figure out the cost of
-        // "making this the split point between all a's and all b's"
-            
+            preBs = 0;
+            postAs = 0;
         }
-        return lowestRemovals;
+    return lowestRemovals;
     }
 };
