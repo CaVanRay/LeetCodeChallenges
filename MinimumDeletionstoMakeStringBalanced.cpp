@@ -21,25 +21,22 @@ class Solution {
 public:
     int minimumDeletions(string s) {
 
-    if(s.size() == 1){
-        return 0;
-    }
+    int numberOfAs = count(s.begin(), s.end(), 'a');
+    int numberOfBs = 0;
+    int totalRemovals = numberOfAs;
+        
+        for(int i = 0; i < s.size(); i++){
 
-    int preBs = 0, postAs = 0, lowestRemovals = INT_MAX;
-        for(int i = s.size() - 1; i >= 0; i--){ // i = the boundry between left and right side at each possible location
-            for(int k = s.size() - 1; k >= 0; k--){ // k runs through and counts how many are on each side
-                if(k >= i && s[k] == 'a'){
-                    postAs++;
-                }else if(k < i && s[k] == 'b'){
-                    preBs++;
-                }
+            if(s[i] == 'a'){
+                numberOfAs--;
+            }else{
+                numberOfBs++;
             }
-            if(postAs + preBs < lowestRemovals){
-                lowestRemovals = postAs + preBs;
-            }
-            preBs = 0;
-            postAs = 0;
+
+            totalRemovals = min(numberOfAs + numberOfBs, totalRemovals);
         }
-    return lowestRemovals;
+        
+    return totalRemovals;
+        
     }
 };
