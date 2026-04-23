@@ -52,3 +52,7 @@ int minimumDeletions(const string& s){
 }
 };
 */
+
+/*
+int minimumDeletions(const string& s){int b=0,r=0;for(const char*p=s.data(),*e=p+s.size();p<e;++p)*p^97?++b:r=r<b?r+1:b;return r;}
+*/
