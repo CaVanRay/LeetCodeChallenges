@@ -20,6 +20,33 @@ Return the minimum number of deletions needed to make s balanced.
 class Solution {
 public:
     int minimumDeletions(string s) {
+
+        int count;
+        bool isA = true;
+        vector<int> countBuckets;
+
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == 'a'){
+                if(i == 0){
+                    count++;
+                }else if(isA){
+                    count++;
+                }else{
+                    countBuckets.push_back(count);
+                    count = 1;
+                }
+            }else{
+                if(i == 0){
+                    count++;
+                    isA = false;
+                }else if(!isA){
+                    count++;
+                }else{
+                    countBuckets.push_back(count);
+                    count = 1;
+                }
+            }
+        }
         
     }
 };
