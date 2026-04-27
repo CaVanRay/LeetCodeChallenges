@@ -42,7 +42,7 @@ public:
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
         vector<pair<int, bool> nextToVisit;
-        int currentSpot;
+        int currentSpot, minimumNumberOfJumps = numeric_limits<int>max();
         bool justJumpedBack;
 
         nextToVisit.push_back(0, false);
@@ -60,7 +60,6 @@ public:
             }
             
         }
-        
-        
+        return minimumNumberOfJumps;
     }
 };
