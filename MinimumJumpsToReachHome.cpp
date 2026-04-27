@@ -61,12 +61,23 @@ public:
 
             if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack)){
                 nextToVisit.push_back({currentSpot + forwardJump, false, currentSpotJumpCount + 1});
+                if((currentSpot + forwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
+                    minimumNumberOfJumps = currentSpotJumpCount + 1;
+                }
             }
             if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack)){
                 nextToVisit.push_back({currentSpot - backwardJump, true, currentSpotJumpCount + 1});
+                if((currentSpot - backwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
+                    minimumNumberOfJumps = currentSpotJumpCount + 1;
+                }
             }
             
         }
-        return minimumNumberOfJumps;
+        
+        if(minimumNumberOfJumps == numeric_limits<int>::max()){
+            return -1;
+        }else{
+            return minimumNumberOfJumps;
+        }
     }
 };
