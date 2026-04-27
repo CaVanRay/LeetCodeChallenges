@@ -22,11 +22,20 @@ possible sequence of jumps that lands the bug on position x, return -1.
 class Solution {
 public:
 
-    bool isValidLandingSpot(int& currentSpot, int& potentialSpot, int& homeSpot, bool justJumpedBack){
+    bool isValidLandingSpot(vector<int>& forbidden,int& currentSpot, int& potentialSpot, int& homeSpot, int& backwardJump, bool justJumpedBack){
+        if(potentialSpot < 0){
+            return false;
+        }else if(potentialSpot - homeSpot > backwardJump){
+            return false;
+        }else if(find(forbidden.begin(), forbidden.end(), potentialSpot) != forbidden.end()){
+            return false;
+        }else{
+            return true;
+        }
         
     }
 
-    int minimumJumps(vector<int>& forbidden, int a, int b, int x) {
+    int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         
     }
 };
