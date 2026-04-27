@@ -38,6 +38,8 @@ public:
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
         vector<pair<int, bool> nextToVisit;
+
+        nextToVisit.push_back(0, false);
         
         
     }
