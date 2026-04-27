@@ -47,7 +47,7 @@ public:
 
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
-        vector<struct> nextToVisit;
+        vector<spotData> nextToVisit;
         int currentSpot = 0, currentSpotJumpCount = 0, minimumNumberOfJumps = numeric_limits<int>::max();
         bool justJumpedBack = false;
 
