@@ -22,7 +22,7 @@ possible sequence of jumps that lands the bug on position x, return -1.
 class Solution {
 public:
 
-    bool isValidLandingSpot(int& potentialSpot){
+    bool isValidLandingSpot(int& currentSpot, int& potentialSpot, int& homeSpot, bool justJumpedBack){
         
     }
 
