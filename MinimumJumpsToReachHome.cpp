@@ -28,7 +28,7 @@ public:
     int numberOfJumps;
     };
 
-    bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int& currentSpot, int& potentialSpot, int& homeSpot, int& backwardJump, bool justJumpedBack){
+    bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int currentSpot, int potentialSpot, int homeSpot, int backwardJump, bool justJumpedBack){
         if(potentialSpot < 0){
             return false;
         }else if(potentialSpot - homeSpot > backwardJump){
@@ -47,26 +47,26 @@ public:
 
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
-        vector<spotData> nextToVisit;
+        queue<spotData> nextToVisit;
         int currentSpot = 0, currentSpotJumpCount = 0, minimumNumberOfJumps = numeric_limits<int>::max();
         bool justJumpedBack = false;
 
-        nextToVisit.push_back({0, false, 0});
+        nextToVisit.push({0, false, 0});
         while(!nextToVisit.empty()){
-            currentSpot = nextToVisit[0].currentSpot;
-            justJumpedBack = nextToVisit[0].justJumpedBack;
-            currentSpotJumpCount = nextToVisit[0].numberOfJumps;
+            currentSpot = nextToVisit.front(currentSpot);
+            justJumpedBack = nextToVisit.front(justJumpedBack);
+            currentSpotJumpCount = nextToVisit.front(numberOfJumps);
             visitedSpots.push_back(currentSpot);
-            nextToVisit.erase(nextToVisit.begin());
+            nextToVisit.pop();
 
             if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack)){
-                nextToVisit.push_back({currentSpot + forwardJump, false, currentSpotJumpCount + 1});
+                nextToVisit.push({currentSpot + forwardJump, false, currentSpotJumpCount + 1});
                 if((currentSpot + forwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
                     minimumNumberOfJumps = currentSpotJumpCount + 1;
                 }
             }
             if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack)){
-                nextToVisit.push_back({currentSpot - backwardJump, true, currentSpotJumpCount + 1});
+                nextToVisit.push({currentSpot - backwardJump, true, currentSpotJumpCount + 1});
                 if((currentSpot - backwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
                     minimumNumberOfJumps = currentSpotJumpCount + 1;
                 }
