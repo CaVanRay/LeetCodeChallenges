@@ -47,14 +47,14 @@ public:
 
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
-        vector<spotData> nextToVisit;
+        vector<struct> nextToVisit;
         int currentSpot = 0, minimumNumberOfJumps = numeric_limits<int>::max();
         bool justJumpedBack = false;
 
         nextToVisit.push_back({0, false, 0});
         while(!nextToVisit.empty()){
-            currentSpot = nextToVisit[0].first;
-            justJumpedBack = nextToVisit[0].second;
+            currentSpot = nextToVisit[0].currentSpot;
+            justJumpedBack = nextToVisit[0].justJumpedBack;
             visitedSpots.push_back(currentSpot);
             nextToVisit.erase(nextToVisit.begin());
 
