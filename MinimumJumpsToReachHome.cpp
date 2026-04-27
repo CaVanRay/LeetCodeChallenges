@@ -22,12 +22,16 @@ possible sequence of jumps that lands the bug on position x, return -1.
 class Solution {
 public:
 
-    bool isValidLandingSpot(vector<int>& forbidden,int& currentSpot, int& potentialSpot, int& homeSpot, int& backwardJump, bool justJumpedBack){
+    bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int& currentSpot, int& potentialSpot, int& homeSpot, int& backwardJump, bool justJumpedBack){
         if(potentialSpot < 0){
             return false;
         }else if(potentialSpot - homeSpot > backwardJump){
             return false;
         }else if(find(forbidden.begin(), forbidden.end(), potentialSpot) != forbidden.end()){
+            return false;
+        }else if(find(visitedSpots.begin(), visitedSpots.end(), potentialSpot) != visitedSpots.end()){
+            return false;
+        }else if((justJumpedBack) && (currentSpot > potentialSpot)){
             return false;
         }else{
             return true;
@@ -38,8 +42,24 @@ public:
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
         vector<pair<int, bool> nextToVisit;
+        int currentSpot;
+        bool justJumpedBack;
 
         nextToVisit.push_back(0, false);
+        while(!nextToVisit.empty()){
+            currentSpot = nextToVisit[0].first;
+            justJumpedBack = nextToVisit[0].second;
+            visitedSpots.push_back(currentSpot);
+            nextToVisit.erase(nextToVisit.begin());
+
+            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack){
+                nextToVisit.push_back(currentSpot + forwardJump, false);
+            }
+            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack){
+                nextToVisit.push_back(currentSpot - backwardJump, true);
+            }
+            
+        }
         
         
     }
