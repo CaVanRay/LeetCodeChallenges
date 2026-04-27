@@ -41,21 +41,21 @@ public:
 
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
-        vector<pair<int, bool> nextToVisit;
-        int currentSpot, minimumNumberOfJumps = numeric_limits<int>max();
-        bool justJumpedBack;
+        vector<pair<int, bool>> nextToVisit;
+        int currentSpot = 0, minimumNumberOfJumps = numeric_limits<int>::max();
+        bool justJumpedBack = false;
 
-        nextToVisit.push_back(0, false);
+        nextToVisit.push_back(make_pair(0, false));
         while(!nextToVisit.empty()){
             currentSpot = nextToVisit[0].first;
             justJumpedBack = nextToVisit[0].second;
             visitedSpots.push_back(currentSpot);
             nextToVisit.erase(nextToVisit.begin());
 
-            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack){
+            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack)){
                 nextToVisit.push_back(currentSpot + forwardJump, false);
             }
-            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack){
+            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack)){
                 nextToVisit.push_back(currentSpot - backwardJump, true);
             }
             
