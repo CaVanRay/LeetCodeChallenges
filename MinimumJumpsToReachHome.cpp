@@ -22,6 +22,12 @@ possible sequence of jumps that lands the bug on position x, return -1.
 class Solution {
 public:
 
+    struct spotData{
+    int currentSpot;
+    bool justJumpedBack;
+    int numberOfJumps;
+    };
+
     bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int& currentSpot, int& potentialSpot, int& homeSpot, int& backwardJump, bool justJumpedBack){
         if(potentialSpot < 0){
             return false;
