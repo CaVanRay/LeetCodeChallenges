@@ -53,9 +53,9 @@ public:
 
         nextToVisit.push({0, false, 0});
         while(!nextToVisit.empty()){
-            currentSpot = nextToVisit.front(currentSpot);
-            justJumpedBack = nextToVisit.front(justJumpedBack);
-            currentSpotJumpCount = nextToVisit.front(numberOfJumps);
+            currentSpot = nextToVisit.front().currentSpot;
+            justJumpedBack = nextToVisit.front().justJumpedBack;
+            currentSpotJumpCount = nextToVisit.front().numberOfJumps;
             visitedSpots.push_back(currentSpot);
             nextToVisit.pop();
 
