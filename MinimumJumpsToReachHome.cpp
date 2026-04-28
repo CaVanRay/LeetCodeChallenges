@@ -29,9 +29,7 @@ public:
     };
 
     bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int currentSpot, int potentialSpot, int homeSpot, int backwardJump, bool justJumpedBack){
-        if(potentialSpot < 0) || ((potentialSpot > homeSpot) && (potentialSpot - homeSpot > backwardJump)){
-            return false;
-        }else if(find(forbidden.begin(), forbidden.end(), potentialSpot) != forbidden.end()){
+        if(potentialSpot < 0) || ((potentialSpot > homeSpot) && (potentialSpot - homeSpot > backwardJump)) || (find(forbidden.begin(), forbidden.end(), potentialSpot) != forbidden.end()){
             return false;
         }else if(find(visitedSpots.begin(), visitedSpots.end(), potentialSpot) != visitedSpots.end()){
             return false;
