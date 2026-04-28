@@ -19,6 +19,11 @@ and integers a, b, and x, return the minimum number of jumps needed for the bug 
 possible sequence of jumps that lands the bug on position x, return -1.
 */
 
+/**********************************************************************
+The basic stucture for information I need to track for every spot
+we visit
+**********************************************************************/
+
 class Solution {
 public:
 
@@ -55,6 +60,8 @@ public:
 
     /**********************************************************************
     Here is the main engine block for this whole thing
+
+    need to do some re-writing but so far I've kept it decently simple/clean
     **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
