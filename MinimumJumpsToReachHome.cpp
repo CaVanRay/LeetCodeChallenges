@@ -28,6 +28,13 @@ public:
     int numberOfJumps;
     };
 
+
+    /**********************************************************************
+    Using the isValidLandingSpot() function as a way to combine the many 
+    factors that I need to look out for in a single place
+
+    Let it be messy out here while the main code is kept clean
+    ***********************************************************************/
     bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int currentSpot, int potentialSpot, int homeSpot, int backwardJump, bool justJumpedBack){
         if(potentialSpot < 0){
             return false;
