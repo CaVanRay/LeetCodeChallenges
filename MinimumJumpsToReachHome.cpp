@@ -52,6 +52,10 @@ public:
         
     }
 
+
+    /**********************************************************************
+    Here is the main engine block for this whole thing
+    **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         vector<int> visitedSpots;
         queue<spotData> nextToVisit;
