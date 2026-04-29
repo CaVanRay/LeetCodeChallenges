@@ -32,7 +32,7 @@ public:
     bool justJumpedBack;
     int numberOfJumps;
 
-    spotData operator+(const int& jumpValue){
+    spotData operator+(int jumpValue){
         spotData newSpot;
         newSpot.currentSpot = this->currentSpot + jumpValue;
         newSpot.justJumpedBack = jumpValue < 0;
