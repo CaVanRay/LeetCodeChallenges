@@ -22,6 +22,10 @@ possible sequence of jumps that lands the bug on position x, return -1.
 /**********************************************************************
 The basic stucture for information I need to track for every spot
 we visit
+
+I've also overloaded the + operator to allow me to easily create new 
+jump spots, though it will require making all backward jumps into negative
+numbers, but that should be fine
 **********************************************************************/
 
 class Solution {
