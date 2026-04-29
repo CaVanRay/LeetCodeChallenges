@@ -78,7 +78,7 @@ public:
     need to do some re-writing but so far I've kept it decently simple/clean
     **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
-        vector<int> visitedSpots;
+        unordered_map<int, spotData> visitedSpots;
         unordered_map<int, spotData> nextToVisit;
         int currentSpot = 0, currentSpotJumpCount = 0, minimumNumberOfJumps = numeric_limits<int>::max();
         bool justJumpedBack = false;
