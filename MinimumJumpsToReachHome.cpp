@@ -36,6 +36,7 @@ public:
     bool justJumpedBack;
     int numberOfJumps;
     bool visitedByFrontJump;
+    bool visitedByBackwJump;
 
     spotData operator+(int jumpValue){
         spotData newSpot;
