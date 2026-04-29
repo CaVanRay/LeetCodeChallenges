@@ -33,6 +33,7 @@ public:
     int numberOfJumps;
 
     spotData operator+(const int& jumpValue){
+        spotData newSpot;
         
     }
 
