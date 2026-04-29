@@ -35,7 +35,7 @@ public:
     spotData operator+(const int& jumpValue){
         spotData newSpot;
         newSpot.currentSpot = this->currentSpot + jumpValue;
-        newSpot.justJumpedBack = jumpValue > 0 ? true : false;
+        newSpot.justJumpedBack = jumpValue < 0;
         newSpot.numberOfJumps = this->numberOfJumps + 1;
         
     }
