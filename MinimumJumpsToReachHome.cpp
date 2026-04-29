@@ -36,7 +36,7 @@ public:
         spotData newSpot;
         newSpot.currentSpot = this->currentSpot + jumpValue;
         newSpot.justJumpedBack = jumpValue > 0 ? true : false;
-        
+        newSpot.numberOfJumps = this->numberOfJumps + 1;
         
     }
 
