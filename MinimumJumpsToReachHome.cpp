@@ -31,6 +31,11 @@ public:
     int currentSpot;
     bool justJumpedBack;
     int numberOfJumps;
+
+    spotData operator+(const spotData& newSpot){
+        
+    }
+
     };
 
 
