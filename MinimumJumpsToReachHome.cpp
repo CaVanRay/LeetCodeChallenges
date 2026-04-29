@@ -37,7 +37,8 @@ public:
         newSpot.currentSpot = this->currentSpot + jumpValue;
         newSpot.justJumpedBack = jumpValue < 0;
         newSpot.numberOfJumps = this->numberOfJumps + 1;
-        
+
+        return newSpot;
     }
 
     };
