@@ -79,7 +79,8 @@ public:
 
     need to do some re-writing but so far I've kept it decently simple/clean
 
-    I think I'm holding myself back with this
+    I think I'm holding myself back with this, What I need to do is delete 
+    the whole 'main()' section and re-write it from scratch
     **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         unordered_map<int, spotData> visitedSpots;
