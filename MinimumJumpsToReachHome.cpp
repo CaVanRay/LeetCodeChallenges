@@ -31,6 +31,8 @@ numbers, but that should be fine
 class Solution {
 public:
 
+    // Basic data structure
+
     struct spotData{
     int currentSpot;
     bool justJumpedBack;
@@ -38,6 +40,8 @@ public:
     bool visitedByFrontJump;
     bool visitedByBackwJump;
 
+    // Default constructor for start of program
+    
     spotData(){
     int currentSpot = 0;
     bool justJumpedBack = true;
@@ -45,6 +49,8 @@ public:
     bool visitedByFrontJump = true;
     bool visitedByBackwJump = true;        
     }
+
+    // All following structures should be created by jumps after original
 
     spotData operator+(int jumpValue){
         spotData newSpot;
@@ -70,13 +76,12 @@ public:
 
 
     /**********************************************************************
-    Here is the main engine block for this whole thing
-
-    wiped everything and starting from scratch
+    Main engine block for this whole thing
     **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         unordered_map<int, spotData> visitedSpots;
         queue<int> nextToVisit;
+        
         
     }
 };
