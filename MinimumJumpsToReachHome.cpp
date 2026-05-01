@@ -91,7 +91,7 @@ public:
             
             if(forbiddenSet.count(currentSpot + forwardJump) == 0 &&         // if not forbidden
               (currentSpot + forwardJump <= upperBound) &&                   // if not beyond upper bound
-              (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
+              (visitedSpots.count(currentSpot + forwardJump) == 0 || !(nextToVisit.front().visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 
