@@ -108,11 +108,11 @@ public:
             * skipping validation                     *
             ******************************************/
             
-            if(find(forbidden.begin(), forbidden.end(), (currentSpot + forwardJump) == forbidden.end())){
+            if(find(forbidden.begin(), forbidden.end(), (currentSpot + forwardJump)) == forbidden.end()){
                 nextToVisit.push( nextToVisit.front() + forwardJump );
             }
-            if(find(fobidden.begin(), forbidden.end(), (currentSpot - backwardJump) == forbidden.end()) && (currentSpot - backwardJump > 0)){
-                nextToVisit.push( nextToVisit.front() + (-backwardJump);
+            if(find(forbidden.begin(), forbidden.end(), (currentSpot - backwardJump)) == forbidden.end() && (currentSpot - backwardJump > 0)){
+                nextToVisit.push( nextToVisit.front() + (-backwardJump));
             }
             nextToVisit.pop();
 
