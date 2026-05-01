@@ -80,8 +80,12 @@ public:
         
         while(!nextToVisit.empty()){
             currentSpot = nextToVisit.front().currentSpot;
-            // visitedSpots[currentSpot] = nextToVisit.front();
-            // moving this to work along validation section
+            if(visitedSpots.count(currentSpot) == 0){
+                visitedSpots[currentSpot] = nextToVisit.front();
+            }else{
+                visitedSpots[currentSpot].visitedByFrontJump = !nextToVisit.front().justJumpedBack;
+                visitedSpots[currentSpot].visitedByBackwJump = nextToVisit.front().justJumpedBack;
+            }
             
             // check if home
             if(currentSpot == homeSpot){
