@@ -66,22 +66,6 @@ public:
 
     };
 
-
-    /***************************************************************************
-    * isValidLandingSpot()  will check prospective spots to prevent landing on *
-    * forbidden spots or revisiting already visited locations                  *
-    ***************************************************************************/
-    bool isValidLandingSpot(){
-        bool isValid = true;
-            
-        /************************************************
-        *             TO ADD LATER                      *
-        ************************************************/
-
-       return isValid;     
-    }
-
-
     /**************************************************************
     *        Main engine block for this whole thing               *
     **************************************************************/
@@ -90,7 +74,7 @@ public:
         unordered_set<int> forbiddenSet(forbidden.begin(), forbidden.end());
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
-        int currentSpot, minimumNumberOfJumps = numeric_limits<int>::max();
+        int currentSpot = 0, minimumNumberOfJumps = numeric_limits<int>::max();
         int upperBound = max(homeSpot, *max_element(forbidden.begin(), forbidden.end())) + forwardJump + backwardJump;
         
         while(!nextToVisit.empty()){
@@ -99,26 +83,24 @@ public:
             
             // check if home
             if(currentSpot == homeSpot){
-                return nextToVisit.front().numberOfJumps);
+                return nextToVisit.front().numberOfJumps;
             }
             
             /******************************************
-            * Normally this would be the validation   *
-            * step but for now, just until I get      *
-            * the basic loop working, I will be       *
-            * skipping validation                     *
+            *    possible spot validation section     *
             ******************************************/
             
-            if(forbiddenSet.count(currentSpot + forwardJump) == 0 && 
-              (currentSpot + forwardJump <= upperBound) &&
-              (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){
+            if(forbiddenSet.count(currentSpot + forwardJump) == 0 &&         // if not forbidden
+              (currentSpot + forwardJump <= upperBound) &&                   // if not beyond upper bound
+              (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 
             }
-            if(forbiddenSet.count(currentSpot - backwardJump) == 0 && 
-              (currentSpot - backwardJump > 0) &&
-              (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){
+            if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
+              (currentSpot - backwardJump > 0) &&                             // if not a negative location
+              !(visitedSpots[currentSpot].justJumpedBack) &&                  // if this isnt a second in a row backwards jump
+              (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){ // if either not visited, or not visited by a backwards jump
         
                 nextToVisit.push( nextToVisit.front() + (-backwardJump));
                 
