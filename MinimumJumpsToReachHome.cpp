@@ -38,6 +38,14 @@ public:
     bool visitedByFrontJump;
     bool visitedByBackwJump;
 
+    spotData(){
+    int currentSpot = 0;
+    bool justJumpedBack = true;
+    int numberOfJumps = 0;
+    bool visitedByFrontJump = true;
+    bool visitedByBackwJump = true;        
+    }
+
     spotData operator+(int jumpValue){
         spotData newSpot;
         newSpot.currentSpot = this->currentSpot + jumpValue;
@@ -45,7 +53,6 @@ public:
         newSpot.numberOfJumps = this->numberOfJumps + 1;
         newSpot.visitedByFrontJump = !newSpot.justJumpedBack;
         newSpot.visitedByBackwJump = newSpot.justJumpedBack;
-
         return newSpot;
     }
 
@@ -53,25 +60,11 @@ public:
 
 
     /**********************************************************************
-    Using the isValidLandingSpot() function as a way to combine the many 
-    factors that I need to look out for in a single place
-
-    Let it be messy out here while the main code is kept clean
+    isValidLandingSpot()  will check prospective spots to prevent landing on
+    forbidden spots or revisiting already visited locations
     ***********************************************************************/
-    bool isValidLandingSpot(vector<int>& visitedSpots, vector<int>& forbidden,int currentSpot, int potentialSpot, int homeSpot, int backwardJump, bool justJumpedBack){
-        if(potentialSpot < 0){
-            return false;
-        }else if(potentialSpot - homeSpot > backwardJump){
-            return false;
-        }else if(find(forbidden.begin(), forbidden.end(), potentialSpot) != forbidden.end()){
-            return false;
-        }else if(find(visitedSpots.begin(), visitedSpots.end(), potentialSpot) != visitedSpots.end()){
-            return false;
-        }else if((justJumpedBack) && (currentSpot > potentialSpot)){
-            return false;
-        }else{
-            return true;
-        }
+    bool isValidLandingSpot(){
+   
         
     }
 
@@ -79,44 +72,11 @@ public:
     /**********************************************************************
     Here is the main engine block for this whole thing
 
-    need to do some re-writing but so far I've kept it decently simple/clean
-
-    I think I'm holding myself back with this, What I need to do is delete 
-    the whole 'main()' section and re-write it from scratch
+    wiped everything and starting from scratch
     **********************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         unordered_map<int, spotData> visitedSpots;
-        unordered_map<int, spotData> nextToVisit;
-        int currentSpot = 0, currentSpotJumpCount = 0, minimumNumberOfJumps = numeric_limits<int>::max();
-        bool justJumpedBack = false;
-
-        nextToVisit.push({0, false, 0});
-        while(!nextToVisit.empty()){
-            currentSpot = nextToVisit.front().currentSpot;
-            justJumpedBack = nextToVisit.front().justJumpedBack;
-            currentSpotJumpCount = nextToVisit.front().numberOfJumps;
-            visitedSpots.push_back(currentSpot);
-            nextToVisit.pop();
-
-            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot + forwardJump, homeSpot, backwardJump, justJumpedBack)){
-                nextToVisit.push({currentSpot + forwardJump, false, currentSpotJumpCount + 1});
-                if((currentSpot + forwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
-                    minimumNumberOfJumps = currentSpotJumpCount + 1;
-                }
-            }
-            if(isValidLandingSpot(visitedSpots, forbidden, currentSpot, currentSpot - backwardJump, homeSpot, backwardJump, justJumpedBack)){
-                nextToVisit.push({currentSpot - backwardJump, true, currentSpotJumpCount + 1});
-                if((currentSpot - backwardJump == homeSpot) && (currentSpotJumpCount + 1 < minimumNumberOfJumps)){
-                    minimumNumberOfJumps = currentSpotJumpCount + 1;
-                }
-            }
-            
-        }
+        queue<int> nextToVisit;
         
-        if(minimumNumberOfJumps == numeric_limits<int>::max()){
-            return -1;
-        }else{
-            return minimumNumberOfJumps;
-        }
     }
 };
