@@ -19,14 +19,16 @@ and integers a, b, and x, return the minimum number of jumps needed for the bug 
 possible sequence of jumps that lands the bug on position x, return -1.
 */
 
-/**********************************************************************
-The basic stucture for information I need to track for every spot
-we visit
 
-I've also overloaded the + operator to allow me to easily create new 
-jump spots, though it will require making all backward jumps into negative
-numbers, but that should be fine
-**********************************************************************/
+
+        /*******************************************************************************
+        * The basic stucture for information I need to track for every spot            *
+        * we visit                                                                     *
+        *                                                                              *
+        * I've also overloaded the + operator to allow me to easily create new         *
+        * jump spots, though it will require making all backward jumps into negative   *
+        * numbers, but that should be fine                                             *
+        ********************************************************************************/
 
 class Solution {
 public:
@@ -43,11 +45,11 @@ public:
     // Default constructor for start of program
     
     spotData(){
-    int currentSpot = 0;
-    bool justJumpedBack = true;
-    int numberOfJumps = 0;
-    bool visitedByFrontJump = true;
-    bool visitedByBackwJump = true;        
+        currentSpot = 0;
+        justJumpedBack = true;
+        numberOfJumps = 0;
+        visitedByFrontJump = true;
+        visitedByBackwJump = true;        
     }
 
     // All following structures should be created by jumps after original
@@ -65,23 +67,54 @@ public:
     };
 
 
-    /**********************************************************************
-    isValidLandingSpot()  will check prospective spots to prevent landing on
-    forbidden spots or revisiting already visited locations
-    ***********************************************************************/
+    /***************************************************************************
+    * isValidLandingSpot()  will check prospective spots to prevent landing on *
+    * forbidden spots or revisiting already visited locations                  *
+    ***************************************************************************/
     bool isValidLandingSpot(){
-   
+
+        /************************************************
+        *             TO ADD LATER                      *
+        ************************************************/
         
     }
 
 
-    /**********************************************************************
-    Main engine block for this whole thing
-    **********************************************************************/
+    /**************************************************************
+    *        Main engine block for this whole thing               *
+    **************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         unordered_map<int, spotData> visitedSpots;
-        queue<int> nextToVisit;
+        queue<spotData> nextToVisit;
+        nextToVisit.push(spotData());
+        bool seekingHome = true;
+        int currentSpot, minimumNumberOfJumps = numeric_limits<int>::max();
         
+        while(!nextToVisit.empty()){
+            currentSpot = nextToVisit.front().currentSpot;
+            visitedSpots[currentSpot] = nextToVisit.front();
+            
+            // check if home
+            if(currentSpot == homeSpot){
+                minimumNumberOfJumps = min(minimumNumberOfJumps, nextToVisit.front().numberOfJumps);
+            }
+            
+            /******************************************
+            * Normally this would be the validation   *
+            * step but for now, just until I get      *
+            * the basic loop working, I will be       *
+            * skipping validation                     *
+            ******************************************/
+            
+            if(find(forbidden.begin(), forbidden.end(), (currentSpot + forwardJump) == forbidden.end())){
+                nextToVisit.push( nextToVisit.front() + forwardJump );
+            }
+            if(find(fobidden.begin(), forbidden.end(), (currentSpot - backwardJump) == forbidden.end()) && (currentSpot - backwardJump > 0)){
+                nextToVisit.push( nextToVisit.front() + (-backwardJump);
+            }
+            nextToVisit.pop();
+
+        }
         
     }
 };
