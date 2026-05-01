@@ -72,11 +72,13 @@ public:
     * forbidden spots or revisiting already visited locations                  *
     ***************************************************************************/
     bool isValidLandingSpot(){
-
+        bool isValid = true;
+            
         /************************************************
         *             TO ADD LATER                      *
         ************************************************/
-        
+
+       return isValid;     
     }
 
 
