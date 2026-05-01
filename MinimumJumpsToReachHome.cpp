@@ -90,7 +90,6 @@ public:
         unordered_set<int> forbiddenSet(forbidden.begin(), forbidden.end());
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
-        bool seekingHome = true;
         int currentSpot, minimumNumberOfJumps = numeric_limits<int>::max();
         
         while(!nextToVisit.empty()){
