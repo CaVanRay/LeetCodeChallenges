@@ -91,6 +91,7 @@ public:
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
         int currentSpot, minimumNumberOfJumps = numeric_limits<int>::max();
+        int upperBound = max(homeSpot, *max_element(forbidden.begin(), forbidden.end())) + forwardJump + backwardJump;
         
         while(!nextToVisit.empty()){
             currentSpot = nextToVisit.front().currentSpot;
@@ -98,7 +99,7 @@ public:
             
             // check if home
             if(currentSpot == homeSpot){
-                minimumNumberOfJumps = min(minimumNumberOfJumps, nextToVisit.front().numberOfJumps);
+                return nextToVisit.front().numberOfJumps);
             }
             
             /******************************************
@@ -109,7 +110,7 @@ public:
             ******************************************/
             
             if(forbiddenSet.count(currentSpot + forwardJump) == 0 && 
-              (currentSpot + forwardJump <= homeSpot + backwardJump) &&
+              (currentSpot + forwardJump <= upperBound) &&
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
@@ -125,9 +126,7 @@ public:
             nextToVisit.pop();
 
         }
-            if(minimumNumberOfJumps == numeric_limits<int>::max()){
-                    minimumNumberOfJumps = -1;
-            }
-     return minimumNumberOfJumps;   
+
+     return -1;   
     }
 };
