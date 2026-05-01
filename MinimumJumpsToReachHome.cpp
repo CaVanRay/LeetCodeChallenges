@@ -74,8 +74,7 @@ public:
         unordered_set<int> forbiddenSet(forbidden.begin(), forbidden.end());
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
-        int currentSpot = 0, minimumNumberOfJumps = numeric_limits<int>::max();
-        int upperBound = max(homeSpot, *max_element(forbidden.begin(), forbidden.end())) + forwardJump + backwardJump;
+        int currentSpot, upperBound = max(homeSpot, *max_element(forbidden.begin(), forbidden.end())) + forwardJump + backwardJump;
         
         while(!nextToVisit.empty()){
             currentSpot = nextToVisit.front().currentSpot;
