@@ -87,6 +87,7 @@ public:
     **************************************************************/
     int minimumJumps(vector<int>& forbidden, int forwardJump, int backwardJump, int homeSpot) {
         unordered_map<int, spotData> visitedSpots;
+        unordered_set<int> forbiddenSet(forbidden.begin(), forbidden.end());
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
         bool seekingHome = true;
@@ -108,11 +109,15 @@ public:
             * skipping validation                     *
             ******************************************/
             
-            if(find(forbidden.begin(), forbidden.end(), (currentSpot + forwardJump)) == forbidden.end()){
-                nextToVisit.push( nextToVisit.front() + forwardJump );
+            if(forbiddenSet.count(currentSpot + forwardJump) == 0 && (currentSpot + forwardJump <= homeSpot + backwardJump) ){
+                if(visitedSpots.count(currentSpot + forwardJump) == 0){
+                        nextToVisit.push( nextToVisit.front() + forwardJump );
+                }
             }
-            if(find(forbidden.begin(), forbidden.end(), (currentSpot - backwardJump)) == forbidden.end() && (currentSpot - backwardJump > 0)){
-                nextToVisit.push( nextToVisit.front() + (-backwardJump));
+            if(forbiddenSet.count(currentSpot - backwardJump) == 0 && (currentSpot - backwardJump > 0)){
+                if(visitedSpots.count(currentSpot - backwardJump) == 0){
+                        nextToVisit.push( nextToVisit.front() + (-backwardJump));
+                }
             }
             nextToVisit.pop();
 
