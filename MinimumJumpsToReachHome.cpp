@@ -109,15 +109,19 @@ public:
             * skipping validation                     *
             ******************************************/
             
-            if(forbiddenSet.count(currentSpot + forwardJump) == 0 && (currentSpot + forwardJump <= homeSpot + backwardJump) ){
-                if(visitedSpots.count(currentSpot + forwardJump) == 0){
-                        nextToVisit.push( nextToVisit.front() + forwardJump );
-                }
+            if(forbiddenSet.count(currentSpot + forwardJump) == 0 && 
+              (currentSpot + forwardJump <= homeSpot + backwardJump) &&
+              (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){
+                
+                nextToVisit.push( nextToVisit.front() + forwardJump );
+                
             }
-            if(forbiddenSet.count(currentSpot - backwardJump) == 0 && (currentSpot - backwardJump > 0)){
-                if(visitedSpots.count(currentSpot - backwardJump) == 0){
-                        nextToVisit.push( nextToVisit.front() + (-backwardJump));
-                }
+            if(forbiddenSet.count(currentSpot - backwardJump) == 0 && 
+              (currentSpot - backwardJump > 0) &&
+              (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){
+        
+                nextToVisit.push( nextToVisit.front() + (-backwardJump));
+                
             }
             nextToVisit.pop();
 
