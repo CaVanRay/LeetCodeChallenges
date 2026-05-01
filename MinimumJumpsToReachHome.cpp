@@ -117,6 +117,9 @@ public:
             nextToVisit.pop();
 
         }
-        
+            if(minimumNumberOfJumps == numeric_limits<int>::max()){
+                    minimumNumberOfJumps = -1;
+            }
+     return minimumNumberOfJumps;   
     }
 };
