@@ -106,16 +106,6 @@ public:
                 }else{
                         visitedSpots[currentSpot].visitedByFrontJump = true;
                 }
-                    /****************************************
-                    * I need to update here tomorrow.       *
-                    * when an item is in the queue it gets  *
-                    * skipped when checking for already     *
-                    * visited locations.                    *
-                    * I need to add items to the queue &    *
-                    * the already visited list at the same  *
-                    * time                                  *
-                    ****************************************/
-                
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
               (currentSpot - backwardJump > 0) &&                             // if not a negative location
