@@ -104,6 +104,10 @@ public:
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
                         visitedSpots[currentSpot + forwardJump] = ; // this line is wrong, but we are kind of drunk, fix tomorrow
                         /***************************************
+                        * I just need to correctly add the     *
+                        * locations I'm already adding to the  *
+                        * queue, to the already visited list as*
+                        * well                                 *
                         ***************************************/
                         
                 }else{
