@@ -101,7 +101,7 @@ public:
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(nextToVisit.front().visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
-                if(visitedSpots.count(currentSpot) == 0){
+                if(visitedSpots.count(currentSpot + forwardJump) == 0){
                         visitedSpots[currentSpot] = nextToVisit.front();
                 }else{
                         visitedSpots[currentSpot].visitedByFrontJump = true;
