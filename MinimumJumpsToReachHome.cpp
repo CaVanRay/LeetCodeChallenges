@@ -116,7 +116,7 @@ public:
                 if(visitedSpots.count(currentSpot - backwardJump) == 0){
                         visitedSpots[currentSpot - backwardJump] = nextToVisit.front(); // this line is wrong, but we are kind of drunk, fix tomorrow
                 }else{
-                visitedSpots[currentSpot].visitedByBackwJump = nextToVisit.front().justJumpedBack;
+                visitedSpots[currentSpot - backwardJump].visitedByBackwJump = nextToVisit.front().justJumpedBack;
                 }
                 
             }
