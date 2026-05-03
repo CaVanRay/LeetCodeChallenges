@@ -102,7 +102,7 @@ public:
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
-                        visitedSpots[currentSpot + forwardJump] = ; // this line is wrong, but we are kind of drunk, fix tomorrow
+                        visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump; // this line is wrong, but we are kind of drunk, fix tomorrow
                         /***************************************
                         * I just need to correctly add the     *
                         * locations I'm already adding to the  *
