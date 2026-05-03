@@ -105,7 +105,7 @@ public:
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
               (currentSpot - backwardJump > 0) &&                             // if not a negative location
-              !(visitedSpots[currentSpot].justJumpedBack) &&                  // if this isnt a second in a row backwards jump
+              !(nextToVisit.front().justJumpedBack) &&                  // if this isnt a second in a row backwards jump
               (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){ // if either not visited, or not visited by a backwards jump
                 visitedSpots[currentSpot - backwardJump].visitedByBackwJump = true;
                 nextToVisit.push( nextToVisit.front() + (-backwardJump));                
