@@ -99,14 +99,8 @@ public:
             if(forbiddenSet.count(currentSpot + forwardJump) == 0 &&         // if not forbidden
               (currentSpot + forwardJump <= upperBound) &&                   // if not beyond upper bound
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(nextToVisit.front().visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
-                
+                visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
                 nextToVisit.push( nextToVisit.front() + forwardJump );
-                if(visitedSpots.count(currentSpot + forwardJump) == 0){
-                        visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump;
-  
-                }else{
-                        visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
-                }
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
               (currentSpot - backwardJump > 0) &&                             // if not a negative location
