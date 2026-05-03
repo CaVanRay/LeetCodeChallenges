@@ -16,3 +16,10 @@ Every customer is satisfied.
 Return true if it is possible to distribute nums according to the above conditions.
 
 */
+
+class Solution {
+public:
+    bool canDistribute(vector<int>& nums, vector<int>& quantity) {
+        
+    }
+};
