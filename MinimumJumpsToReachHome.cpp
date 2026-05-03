@@ -102,7 +102,7 @@ public:
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
-                        visitedSpots[currentSpot] = nextToVisit.front(); // this line is wrong, but we are kind of drunk, fix tomorrow
+                        visitedSpots[currentSpot + forwardJump] = nextToVisit.front(); // this line is wrong, but we are kind of drunk, fix tomorrow
                 }else{
                         visitedSpots[currentSpot].visitedByFrontJump = true;
                 }
