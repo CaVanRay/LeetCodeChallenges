@@ -74,9 +74,9 @@ public:
         unordered_set<int> forbiddenSet(forbidden.begin(), forbidden.end());
         queue<spotData> nextToVisit;
         nextToVisit.push(spotData());
-        int currentSpot, upperBound = 2,147,483,647;//homeSpot + forwardJump + backwardJump;
-        //if(!forbidden.empty())
-            //upperBound = max(upperBound, *max_element(forbidden.begin(), forbidden.end()) + forwardJump + backwardJump);
+        int currentSpot, upperBound = homeSpot + forwardJump + backwardJump;
+        if(!forbidden.empty())
+            upperBound = max(upperBound, *max_element(forbidden.begin(), forbidden.end()) + forwardJump + backwardJump);
         
         while(!nextToVisit.empty()){
             currentSpot = nextToVisit.front().currentSpot;
@@ -100,8 +100,8 @@ public:
             if(forbiddenSet.count(currentSpot + forwardJump) == 0 &&         // if not forbidden
               (currentSpot + forwardJump <= upperBound) &&                   // if not beyond upper bound
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
-                visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
                 nextToVisit.push( nextToVisit.front() + forwardJump );
+                visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump;
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
               (currentSpot - backwardJump > 0) &&                             // if not a negative location
