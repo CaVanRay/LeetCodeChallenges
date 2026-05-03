@@ -129,7 +129,7 @@ public:
                         * well                                 *
                         ***************************************/
                 }else{
-                visitedSpots[currentSpot - backwardJump].visitedByBackwJump = nextToVisit.front().justJumpedBack;
+                visitedSpots[currentSpot - backwardJump].visitedByBackwJump = true;
                 }
                 
             }
