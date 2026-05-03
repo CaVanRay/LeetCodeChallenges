@@ -101,6 +101,11 @@ public:
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(nextToVisit.front().visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
+                if(visitedSpots.count(currentSpot) == 0){
+                        visitedSpots[currentSpot] = nextToVisit.front();
+                }else{
+                        visitedSpots[currentSpot].visitedByFrontJump = true;
+                }
                     /****************************************
                     * I need to update here tomorrow.       *
                     * when an item is in the queue it gets  *
