@@ -101,14 +101,22 @@ public:
               (currentSpot + forwardJump <= upperBound) &&                   // if not beyond upper bound
               (visitedSpots.count(currentSpot + forwardJump) == 0 || !(visitedSpots[currentSpot + forwardJump].visitedByFrontJump))){ // if either not visited, or not visited by a forward jump
                 nextToVisit.push( nextToVisit.front() + forwardJump );
+                if(visitedSpots.count(currentSpot + forwardJump) == 0 ){    
                 visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump;
+                }else{
+                visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;      
+                }
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
               (currentSpot - backwardJump > 0) &&                             // if not a negative location
               !(nextToVisit.front().justJumpedBack) &&                  // if this isnt a second in a row backwards jump
               (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){ // if either not visited, or not visited by a backwards jump
-                nextToVisit.push( nextToVisit.front() + (-backwardJump));    
+                nextToVisit.push( nextToVisit.front() + (-backwardJump));
+                if(visitedSpots.count(currentSpot - backwardJump) == 0 ){
                 visitedSpots[currentSpot - backwardJump] = nextToVisit.front() + (-backwardJump);
+                }else{
+                visitedSpots[currentSpot - backwardJump].visitedByBackwJump = true;
+                }
             }
             nextToVisit.pop();
 
