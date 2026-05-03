@@ -113,7 +113,7 @@ public:
               (visitedSpots.count(currentSpot - backwardJump) == 0 || !(visitedSpots[currentSpot - backwardJump].visitedByBackwJump))){ // if either not visited, or not visited by a backwards jump
         
                 nextToVisit.push( nextToVisit.front() + (-backwardJump));
-                if(visitedSpots.count(currentSpot) == 0){
+                if(visitedSpots.count(currentSpot -  backwardJump) == 0){
                         visitedSpots[currentSpot] = nextToVisit.front();
                 }else{
                 visitedSpots[currentSpot].visitedByBackwJump = nextToVisit.front().justJumpedBack;
