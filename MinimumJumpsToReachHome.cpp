@@ -103,6 +103,9 @@ public:
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
                         visitedSpots[currentSpot + forwardJump] = ; // this line is wrong, but we are kind of drunk, fix tomorrow
+                        /***************************************
+                        ***************************************/
+                        
                 }else{
                         visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
                 }
@@ -115,6 +118,8 @@ public:
                 nextToVisit.push( nextToVisit.front() + (-backwardJump));
                 if(visitedSpots.count(currentSpot - backwardJump) == 0){
                         visitedSpots[currentSpot - backwardJump] = ; // this line is wrong, but we are kind of drunk, fix tomorrow
+                        /***************************************
+                        ***************************************/
                 }else{
                 visitedSpots[currentSpot - backwardJump].visitedByBackwJump = nextToVisit.front().justJumpedBack;
                 }
