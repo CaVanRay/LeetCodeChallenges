@@ -102,14 +102,8 @@ public:
                 
                 nextToVisit.push( nextToVisit.front() + forwardJump );
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
-                        visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump; // this line is wrong, but we are kind of drunk, fix tomorrow
-                        /***************************************
-                        * I just need to correctly add the     *
-                        * locations I'm already adding to the  *
-                        * queue, to the already visited list as*
-                        * well                                 *
-                        ***************************************/
-                        
+                        visitedSpots[currentSpot + forwardJump] = nextToVisit.front() + forwardJump;
+  
                 }else{
                         visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
                 }
@@ -121,13 +115,7 @@ public:
         
                 nextToVisit.push( nextToVisit.front() + (-backwardJump));
                 if(visitedSpots.count(currentSpot - backwardJump) == 0){
-                        visitedSpots[currentSpot - backwardJump] = nextToVisit.front() + (-backwardJump); // this line is wrong, but we are kind of drunk, fix tomorrow
-                        /***************************************
-                        * I just need to correctly add the     *
-                        * locations I'm already adding to the  *
-                        * queue, to the already visited list as*
-                        * well                                 *
-                        ***************************************/
+                        visitedSpots[currentSpot - backwardJump] = nextToVisit.front() + (-backwardJump); 
                 }else{
                 visitedSpots[currentSpot - backwardJump].visitedByBackwJump = true;
                 }
