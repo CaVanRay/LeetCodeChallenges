@@ -104,7 +104,7 @@ public:
                 if(visitedSpots.count(currentSpot + forwardJump) == 0){
                         visitedSpots[currentSpot + forwardJump] = nextToVisit.front(); // this line is wrong, but we are kind of drunk, fix tomorrow
                 }else{
-                        visitedSpots[currentSpot].visitedByFrontJump = true;
+                        visitedSpots[currentSpot + forwardJump].visitedByFrontJump = true;
                 }
             }
             if(forbiddenSet.count(currentSpot - backwardJump) == 0 &&         // if not forbidden
