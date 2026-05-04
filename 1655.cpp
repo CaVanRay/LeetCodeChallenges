@@ -39,7 +39,7 @@ public:
         * week to finish                                          *
         **********************************************************/
 
-        if(quantity.length > nums.length){
+        if(quantity.length > nums.length){ // if we have more requests then items, it's not possible to serve everyone
             return false
         }
         
