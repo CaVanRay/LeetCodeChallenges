@@ -16,10 +16,11 @@
 |                                                                                                                |            
 *****************************************************************************************************************/
 
+
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
-        unordered map<int, int> dupesFound;
+        unordered_map<int, int> dupesFound;
 
         /**********************************************************
         * Ok, here's my idea, we count duplicates and take orders *
@@ -39,17 +40,17 @@ public:
         * week to finish                                          *
         **********************************************************/
 
-        if(quantity.length > nums.length){ // if we have more requests then items, it's not possible to serve everyone
-            return false
+        if(quantity.size() > nums.size()){ // if we have more requests then items, it's not possible to serve everyone
+            return false;
         }
 
-        for(int i = 0; i < nums.length; i++){
+        for(int i = 0; i < nums.size(); i++){
             if(dupesFound.count(nums[i]) == 0){
                 dupesFound.insert({nums[i], 1});
             }else{
                 dupesFound[nums[i]] += 1;
             }
         }
-        
+        return true;
     }
 };
