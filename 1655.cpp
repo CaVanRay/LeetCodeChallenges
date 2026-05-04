@@ -46,6 +46,8 @@ public:
         for(int i = 0; i < nums.length; i++){
             if(dupesFound.count(nums[i]) == 0){
                 dupesFound.insert({nums[i], 1});
+            }else{
+                dupesFound[nums[i]] += 1;
             }
         }
         
