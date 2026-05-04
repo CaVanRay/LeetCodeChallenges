@@ -42,6 +42,12 @@ public:
         if(quantity.length > nums.length){ // if we have more requests then items, it's not possible to serve everyone
             return false
         }
+
+        for(int i = 0; i < nums.length; i++){
+            if(dupesFound.count(nums[i]) == 0){
+                dupesFound.insert({nums[i], 1});
+            }
+        }
         
     }
 };
