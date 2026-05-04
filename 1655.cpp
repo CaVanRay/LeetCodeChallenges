@@ -38,6 +38,10 @@ public:
         * medium level challenge I just finished took about a     *
         * week to finish                                          *
         **********************************************************/
+
+        if(quantity.length > nums.length){
+            return false
+        }
         
     }
 };
