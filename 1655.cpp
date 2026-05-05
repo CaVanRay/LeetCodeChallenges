@@ -62,7 +62,7 @@ public:
                 if(dupeCatagories.count(dupesFound[j]) == 0){
                     dupeCatagories.insert({dupesFound[j], 1});
                 }else{
-                    dupeCatagories[dupesFound[j] += 1;
+                    dupeCatagories[dupesFound[j]] += 1;
                 }
             }
         }
