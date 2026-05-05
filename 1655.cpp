@@ -22,6 +22,15 @@ public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
         unordered_map<int, int> dupesFound, dupeCatagories;
 
+        /***************************
+        * Just to make it easier   *
+        *                          *
+        * I'm sorting both list    *
+        * from largest to smallest *
+        ***************************/
+
+        
+        
         /************************
         * Just make it dirty    *
         *                       *
