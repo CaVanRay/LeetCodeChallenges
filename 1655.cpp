@@ -77,7 +77,7 @@ public:
         *                                                   *
         ****************************************************/
         for(int k = 0; k < quantity.size(); k++){
-            if(dupeCatagories.count(quantity[k]) ==0){
+            if(dupeCatagories.count(quantity[k]) == 0){
                 return false; // this is temporary and will be changed later to check for larger sizes
             }else if(dupeCatagories[quantity[k]] > 0){
                 dupeCatagories[quantity[k]] -= 1;
