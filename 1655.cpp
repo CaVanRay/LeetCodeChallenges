@@ -40,6 +40,11 @@ public:
                 dupesFound[nums[i]] += 1;
             }
         }
+        for(int j = 0; j < dupesFound.size(); j++){
+            if(dupesFound[j] > 1){
+                
+            }
+        }
         return true;
     }
 };
