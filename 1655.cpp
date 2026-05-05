@@ -29,6 +29,7 @@ public:
         * from largest to smallest *
         ***************************/
 
+        sort(nums.begin(), nums.end(), greater<int>());
         sort(quantity.begin(), quantity.end(), greater<int>());
         
         /************************
