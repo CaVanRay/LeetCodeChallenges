@@ -29,7 +29,7 @@ public:
         * from largest to smallest *
         ***************************/
 
-        
+        sort(quantity.begin(), quantity.end(), greater<int>());
         
         /************************
         * Just make it dirty    *
