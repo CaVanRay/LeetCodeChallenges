@@ -42,7 +42,9 @@ public:
         }
         for(int j = 0; j < dupesFound.size(); j++){
             if(dupesFound[j] > 1){
-                
+                if(dupeCatagories.count(dupesFound[j]) == 0){
+                    dupeCatagories.insert({dupesFound,})
+                }
             }
         }
         return true;
