@@ -40,6 +40,7 @@ public:
                 dupesFound[nums[i]] += 1;
             }
         }
+        
         for(int j = 0; j < dupesFound.size(); j++){
             if(dupesFound[j] > 1){
                 if(dupeCatagories.count(dupesFound[j]) == 0){
@@ -49,6 +50,11 @@ public:
                 }
             }
         }
+        
+        for(int k = 0; k < nums.size(); k++){
+            
+        }
+        
         return true;
     }
 };
