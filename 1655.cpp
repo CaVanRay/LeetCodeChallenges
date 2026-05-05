@@ -20,7 +20,7 @@
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
-        unordered_map<int, int> dupesFound;
+        unordered_map<int, int> dupesFound, dupeCatagories;
 
         /************************
         * Just make it dirty    *
