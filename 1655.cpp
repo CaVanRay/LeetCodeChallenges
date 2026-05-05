@@ -67,6 +67,15 @@ public:
             }
         }
         
+        /****************************************************
+        *                                                   *
+        *   Lastly, we now go through the list of orders    *
+        *                                                   *
+        *   every match we find subtracts from that size    *
+        *   if that size isn't found, or hits zero we can   *
+        *   either return false, Or try going up a size     *
+        *                                                   *
+        ****************************************************/
         for(int k = 0; k < quantity.size(); k++){
             
         }
