@@ -33,6 +33,13 @@ public:
             return false;
         }
 
+        /****************************************************
+        *                                                   *
+        *   First we run through the provided nums vector   *
+        *                                                   *
+        *   all duplicates are combined in an unordered_map *
+        *                                                   *
+        ****************************************************/
         for(int i = 0; i < nums.size(); i++){
             if(dupesFound.count(nums[i]) == 0){
                 dupesFound.insert({nums[i], 1});
@@ -40,7 +47,16 @@ public:
                 dupesFound[nums[i]] += 1;
             }
         }
-        
+
+        /****************************************************
+        *                                                   *
+        *   Next we toss anything counted only once         *
+        *                                                   *
+        *   and what is left over gets combined into        *
+        *   another unordered_map along with a count        *
+        *   of how many of each duplicate amount was found  *
+        *                                                   *
+        ****************************************************/
         for(int j = 0; j < dupesFound.size(); j++){
             if(dupesFound[j] > 1){
                 if(dupeCatagories.count(dupesFound[j]) == 0){
@@ -51,7 +67,7 @@ public:
             }
         }
         
-        for(int k = 0; k < nums.size(); k++){
+        for(int k = 0; k < quantity.size(); k++){
             
         }
         
