@@ -103,23 +103,21 @@ public:
         }
         */
         for(auto& orders : quantity){
-            bool orderFound = false;
+            int closestMatch = -1;
             for(auto& pair : dupeCatagories){
-                if(pair.first == orders && pair.second > 0 && orderFound == false){
-                    pair.second -= 1;
-                    orderFound = true;
-                    break;
-                }
-                if(pair.first > orders && pair.second > 0 && orderFound == false){
-                    pair.second -= 1;
-                    int remainder = pair.first - orders;
-                    dupeCatagories[remainder] += 1;
-                    orderFound = true;
-                    break;
+                if(pair.first >= orders && pair.second > 0){
+                    if(closestMatch == -1 || pair.first < closestMatch){
+                        closestMatch = pair.first
+                    }
                 }
             }
-            if(!orderFound){
+            if(closestMatch == -1){
                 return false;
+            }
+            dupeCatagories[closestMatch] -= 1;
+            int remainder = closestMatch - orders;
+            if(remainder > 0){
+                dupeCatagories[remainder] += 1;
             }
         }
         
