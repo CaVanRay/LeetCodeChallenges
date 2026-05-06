@@ -86,6 +86,7 @@ public:
         *   either return false, Or try going up a size     *
         *                                                   *
         ****************************************************/
+        /*
         for(int k = 0; k < quantity.size(); k++){
             if(dupeCatagories.count(quantity[k]) == 0){
                 return false; // this is temporary and will be changed later to check for larger sizes
@@ -93,6 +94,20 @@ public:
                 dupeCatagories[quantity[k]] -= 1;
             }else{
                 return false; // this is temporary and will be changed later to check for larger sizes
+            }
+        }
+        */
+        for(auto& orders : quantity){
+            bool orderFound = false;
+            for(auto& pair : dupeCatagories){
+                if(pair.first >= order && pair.second > 0 && orderFound = false){
+                    pair.second -= 1;
+                    orderFound = true;
+                    break;
+                }
+            }
+            if(!orderFound){
+                return false;
             }
         }
         
