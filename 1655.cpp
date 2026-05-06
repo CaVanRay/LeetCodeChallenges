@@ -100,8 +100,19 @@ public:
         for(auto& orders : quantity){
             bool orderFound = false;
             for(auto& pair : dupeCatagories){
-                if(pair.first >= orders && pair.second > 0 && orderFound == false){
+                if(pair.first == orders && pair.second > 0 && orderFound == false){
                     pair.second -= 1;
+                    orderFound = true;
+                    break;
+                }
+                if(pair.first > orders && pair.second > 0 && orderFound == false){
+                    pair.second -= 1;
+                    int remainder = pair.first - orders;
+                    if(quantity.count(remainder) == 0){
+                        quantity.insert(remainder, 1);
+                    }else{
+                        quantity[remainder] += 1;
+                    }
                     orderFound = true;
                     break;
                 }
