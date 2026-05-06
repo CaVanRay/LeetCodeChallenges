@@ -79,7 +79,7 @@ public:
         }
         */
         for(auto dupes : dupesFound){
-            dupeCatagories[dupes.second) += 1;
+            dupeCatagories[dupes.second] += 1;
         }
         
         /****************************************************
@@ -107,7 +107,7 @@ public:
             for(auto& pair : dupeCatagories){
                 if(pair.first >= orders && pair.second > 0){
                     if(closestMatch == -1 || pair.first < closestMatch){
-                        closestMatch = pair.first
+                        closestMatch = pair.first;
                     }
                 }
             }
