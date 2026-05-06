@@ -100,7 +100,7 @@ public:
         for(auto& orders : quantity){
             bool orderFound = false;
             for(auto& pair : dupeCatagories){
-                if(pair.first >= order && pair.second > 0 && orderFound = false){
+                if(pair.first >= orders && pair.second > 0 && orderFound = false){
                     pair.second -= 1;
                     orderFound = true;
                     break;
