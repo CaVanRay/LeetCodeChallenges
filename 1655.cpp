@@ -67,6 +67,7 @@ public:
         *   of how many of each duplicate amount was found  *
         *                                                   *
         ****************************************************/
+        /*
         for(int j = 0; j < dupesFound.size(); j++){
             if(dupesFound[j] >= 1){
                 if(dupeCatagories.count(dupesFound[j]) == 0){
@@ -75,6 +76,10 @@ public:
                     dupeCatagories[dupesFound[j]] += 1;
                 }
             }
+        }
+        */
+        for(auto dupes : dupesFound){
+            dupeCatagories[dupes.second) += 1;
         }
         
         /****************************************************
