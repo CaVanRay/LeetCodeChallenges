@@ -108,8 +108,8 @@ public:
                 if(pair.first > orders && pair.second > 0 && orderFound == false){
                     pair.second -= 1;
                     int remainder = pair.first - orders;
-                    if(quantity.count(remainder) == 0){
-                        quantity.insert(remainder, 1);
+                    if(dupeCatagories.count(remainder) == 0){
+                        dupeCatagories.insert(remainder, 1);
                     }else{
                         quantity[remainder] += 1;
                     }
