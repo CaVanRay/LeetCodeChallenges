@@ -16,54 +16,6 @@
 |                                                                                                                |            
 *****************************************************************************************************************/
 
-/*
-class Solution {
-public:
-    bool canDistribute(vector<int>& nums, vector<int>& quantity) {
-        unordered_map<int, int> dupesFound, dupeCatagories;
-
-        sort(nums.begin(), nums.end()), greater<int>();
-        sort(quantity.begin(), quantity.end(), greater<int>());
-        
-        if(quantity.size() > nums.size()){ // if we have more requests then items, it's not possible to serve everyone
-            return false;
-        }
-
-        for(int i = 0; i < nums.size(); i++){
-            if(dupesFound.count(nums[i]) == 0){
-                dupesFound.insert({nums[i], 1});
-            }else{
-                dupesFound[nums[i]] += 1;
-            }
-        }
-
-        for(auto dupes : dupesFound){
-            dupeCatagories[dupes.second] += 1;
-        }
-        
-        for(auto& orders : quantity){
-            int closestMatch = -1;
-            for(auto& pair : dupeCatagories){
-                if(pair.first >= orders && pair.second > 0){
-                    if(closestMatch == -1 || pair.first < closestMatch){
-                        closestMatch = pair.first;
-                    }
-                }
-            }
-            if(closestMatch == -1){
-                return false;
-            }
-            dupeCatagories[closestMatch] -= 1;
-            int remainder = closestMatch - orders;
-            if(remainder > 0){
-                dupeCatagories[remainder] += 1;
-            }
-        }
-        
-        return true;
-    }
-};
-*/
 
 // OK, starting from scratch
 /*************************************************
