@@ -66,3 +66,8 @@ public:
 */
 
 // OK, starting from scratch
+/*************************************************
+*    Ok, I'm throwing out everything from before *
+*    and starting from scratch                   *
+*    
+*************************************************/
