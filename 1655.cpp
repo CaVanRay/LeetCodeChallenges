@@ -23,5 +23,6 @@
 *    and starting from scratch                   *
 *    To do this correctly I need to use:         *
 *        - Backtracking                          *
-*        -
+*        - Dynamic Programming                   *
+
 *************************************************/
