@@ -25,4 +25,6 @@
 *        - Backtracking                          *
 *        - Dynamic Programming                   *
 *        - Recursion                             *
+*        - Memoize                               *
+*                                                *
 *************************************************/
