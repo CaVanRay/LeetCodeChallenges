@@ -53,6 +53,10 @@ bool solutionChecker(int customer, vector<int>& counts){
         return true;
 
     int needed = quantity[customer];
+
+    for(int i = 0; i < counts.size(); i++){
+        
+    }
 }
 
 // Add in memoization
