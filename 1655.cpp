@@ -35,9 +35,9 @@ public:
 unordered_map <int, int> combinedDupes;
 vector<int> dupeCounts;
 
-// sort provided vectors from smallest to largest
+// sort provided vectors from largest to smallest
 sort(nums.begin(), nums.end(), greater<int>());
-sort(quantity.begin(), quantity.end());
+sort(quantity.begin(), quantity.end(), greater<int>());
         
 // First Count the frequency of duplicate quantities
 for(auto& number : nums){
