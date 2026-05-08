@@ -55,7 +55,9 @@ bool solutionChecker(int customer, vector<int>& counts){
     int needed = quantity[customer];
 
     for(int i = 0; i < counts.size(); i++){
-        
+        if(counts[i] >= needed){
+            
+        }
     }
 }
 
