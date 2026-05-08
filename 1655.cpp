@@ -31,7 +31,9 @@
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
-
+// variable declarations
+unordered_map <int, int> combinedDupes, dupeQuantityBuckets;
+        
 // First Count frequencies
 
 // Next set up recursion function
