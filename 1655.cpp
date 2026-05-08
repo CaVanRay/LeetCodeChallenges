@@ -63,6 +63,7 @@ bool solutionChecker(int customer, vector<int>& counts){
             count[i] += needed
         }
     }
+    return false;
 }
 
 // Add in memoization
