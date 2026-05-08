@@ -32,7 +32,8 @@ class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
 // variable declarations
-unordered_map <int, int> combinedDupes, dupeQuantityBuckets;
+unordered_map <int, int> combinedDupes;
+vector<int> dupeCounts;
 
 // sort provided vectors from smallest to largest
 sort(nums.begin(), nums.end());
@@ -43,8 +44,8 @@ for(auto& number : nums){
     combinedDupes[number] += 1;
 }
 for(auto& pair : combinedDupes){
-    dupeQuantityBuckets[pair.second] += 1;
-} 
+    dupeCounts.push_back(pair.second);
+}
 
 // Next set up recursion function
 
