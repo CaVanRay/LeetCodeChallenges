@@ -66,6 +66,8 @@ bool solutionChecker(int customer, vector<int>& counts){
     return false;
 }
 
+return(solutionChecker(0, dupeCounts));
+
 // Add in memoization
         
     }
