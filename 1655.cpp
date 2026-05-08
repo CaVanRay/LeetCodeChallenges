@@ -51,8 +51,8 @@ for(auto& pair : combinedDupes){
 bool solutionChecker(int customer, vector<int>& counts){
     if(customer == quantity.size());
         return true;
-    
-    
+
+    int needed = quantity[customer];
 }
 
 // Add in memoization
