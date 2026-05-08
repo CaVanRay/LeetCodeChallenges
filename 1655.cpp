@@ -33,6 +33,10 @@ public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
 // variable declarations
 unordered_map <int, int> combinedDupes, dupeQuantityBuckets;
+
+// sort provided vectors from smallest to largest
+sort(nums.begin(), nums.end());
+sort(quantity.begin(), quantity.end());
         
 // First Count frequencies
 
