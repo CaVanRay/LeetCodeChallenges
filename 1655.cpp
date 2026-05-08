@@ -49,6 +49,8 @@ for(auto& pair : combinedDupes){
 
 // Next set up recursion function
 bool solutionChecker(int customer, vector<int>& counts){
+    if(customer == quantity.size());
+        return true;
     
     
 }
