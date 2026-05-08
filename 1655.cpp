@@ -60,6 +60,7 @@ bool solutionChecker(int customer, vector<int>& counts){
             if(solve(customerIndex + 1, counts)){
                 return true;
             }
+            count[i] += needed
         }
     }
 }
