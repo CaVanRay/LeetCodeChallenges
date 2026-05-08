@@ -48,7 +48,7 @@ for(auto& pair : combinedDupes){
 }
 
 // Next set up recursion function
-bool solutionChecker(){
+bool solutionChecker(int customer, vector<int>& counts){
     
 }
 
