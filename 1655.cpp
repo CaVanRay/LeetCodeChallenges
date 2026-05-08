@@ -48,6 +48,9 @@ for(auto& pair : combinedDupes){
 }
 
 // Next set up recursion function
+bool solutionChecker(){
+    
+}
 
 // Add in memoization
         
