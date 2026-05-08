@@ -38,7 +38,8 @@ unordered_map <int, int> combinedDupes, dupeQuantityBuckets;
 sort(nums.begin(), nums.end());
 sort(quantity.begin(), quantity.end());
         
-// First Count frequencies
+// First Count the frequency of duplicate quantities
+
 
 // Next set up recursion function
 
