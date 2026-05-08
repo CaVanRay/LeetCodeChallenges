@@ -39,7 +39,12 @@ sort(nums.begin(), nums.end());
 sort(quantity.begin(), quantity.end());
         
 // First Count the frequency of duplicate quantities
-
+for(auto& number : nums){
+    combinedDupes[number] += 1;
+}
+for(auto& pair : combinedDupes){
+    dupeQuantityBuckets[pair.second] += 1;
+} 
 
 // Next set up recursion function
 
