@@ -36,6 +36,9 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
 }
 */
 
+
+unordered_map <int, bool> attemptedCombos;
+
 bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     if(mask == (i << quantity.size()) - 1) return true;
 
@@ -67,7 +70,6 @@ public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
 // variable declarations
 unordered_map <int, int> combinedDupes;
-unordered_map <int, bool> attemptedCombos;
 vector<int> dupeCounts;
 
 sort(nums.begin(), nums.end(), greater<int>());
