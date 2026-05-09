@@ -39,7 +39,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
 bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     if(mask == (i << quantity.size()) - 1) return true;
 
-    
+    int customer = -1;
     
     return false;
 }
