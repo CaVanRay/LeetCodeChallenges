@@ -54,7 +54,7 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
         if(counts[i] >= needed){
             counts[i] -= needed;
             if(solutionChecker(mask | (1 << customer), counts, quantity)){
-                
+                return attemptedCombos[mask] = true;
             }
         }
     }
