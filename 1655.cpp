@@ -58,9 +58,8 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
             }
             counts[i] += needed;
         }
-    }
-    
-    return false;
+    } 
+    return attemptedCombos[mask] = false;
 }
 
 class Solution {
