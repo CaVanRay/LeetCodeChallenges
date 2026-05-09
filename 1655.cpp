@@ -39,7 +39,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
     for(int i = 0; i < counts.size(); i++){
         if(counts[i] >= needed){
             counts[i] -= needed;
-            if(solutionChecker(customerIndex + 1, counts)){
+            if(solutionChecker(customer + 1, counts, quantity)){
                 return true;
             }
             counts[i] += needed;
