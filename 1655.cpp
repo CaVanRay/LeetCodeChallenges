@@ -16,19 +16,6 @@
 |                                                                                                                |            
 *****************************************************************************************************************/
 
-
-// OK, starting from scratch
-/*************************************************
-*    Ok, I'm throwing out everything from before *
-*    and starting from scratch                   *
-*    To do this correctly I need to use:         *
-*        - Backtracking                          *
-*        - Dynamic Programming                   *
-*        - Recursion                             *
-*        - Memoize                               *
-*                                                *
-*************************************************/
-
 bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
     if(customer == quantity.size()){
         return true;
