@@ -15,7 +15,7 @@
 |    Return true if it is possible to distribute nums according to the above conditions.                         |                               
 |                                                                                                                |            
 *****************************************************************************************************************/
-
+/*
 bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
     if(customer == quantity.size()){
         return true;
@@ -32,6 +32,12 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
             counts[i] += needed;
         }
     }
+    return false;
+}
+*/
+
+bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
+
     return false;
 }
 
