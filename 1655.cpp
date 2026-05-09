@@ -52,7 +52,7 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     int needed = quantity[customer];
     for(int i = 0; i < counts.size(); i++){
         if(counts[i] >= needed){
-            
+            counts[i] -= needed;
         }
     }
     
