@@ -46,6 +46,7 @@ public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
 // variable declarations
 unordered_map <int, int> combinedDupes;
+unordered_map <int, bool> attemptedCombos;
 vector<int> dupeCounts;
 
 sort(nums.begin(), nums.end(), greater<int>());
