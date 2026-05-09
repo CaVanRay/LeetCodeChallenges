@@ -53,6 +53,9 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     for(int i = 0; i < counts.size(); i++){
         if(counts[i] >= needed){
             counts[i] -= needed;
+            if(solutionChecker(mask | (1 << customer), counts, quantity)){
+                
+            }
         }
     }
     
