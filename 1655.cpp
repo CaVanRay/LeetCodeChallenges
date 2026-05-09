@@ -28,6 +28,26 @@
 *        - Memoize                               *
 *                                                *
 *************************************************/
+
+bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
+    if(customer == quantity.size()){
+        return true;
+    }
+
+    int needed = quantity[customer];
+
+    for(int i = 0; i < counts.size(); i++){
+        if(counts[i] >= needed){
+            counts[i] -= needed;
+            if(solutionChecker(customerIndex + 1, counts)){
+                return true;
+            }
+            counts[i] += needed;
+        }
+    }
+    return false;
+}
+
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
@@ -48,25 +68,8 @@ for(auto& pair : combinedDupes){
 }
 
 // Next set up recursion function
-bool solutionChecker(int customer, vector<int>& counts){
-    if(customer == quantity.size());
-        return true;
 
-    int needed = quantity[customer];
-
-    for(int i = 0; i < counts.size(); i++){
-        if(counts[i] >= needed){
-            counts[i] -= needed;
-            if(solve(customerIndex + 1, counts)){
-                return true;
-            }
-            count[i] += needed
-        }
-    }
-    return false;
-}
-
-return(solutionChecker(0, dupeCounts));
+return(solutionChecker(0, dupeCounts, quantity));
 
 // Add in memoization
         
