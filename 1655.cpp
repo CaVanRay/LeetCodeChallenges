@@ -55,11 +55,9 @@ public:
 unordered_map <int, int> combinedDupes;
 vector<int> dupeCounts;
 
-// sort provided vectors from largest to smallest
 sort(nums.begin(), nums.end(), greater<int>());
 sort(quantity.begin(), quantity.end(), greater<int>());
         
-// First Count the frequency of duplicate quantities
 for(auto& number : nums){
     combinedDupes[number] += 1;
 }
@@ -67,11 +65,7 @@ for(auto& pair : combinedDupes){
     dupeCounts.push_back(pair.second);
 }
 
-// Next set up recursion function
-
 return(solutionChecker(0, dupeCounts, quantity));
-
-// Add in memoization
         
     }
 };
