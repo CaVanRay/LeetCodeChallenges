@@ -50,6 +50,9 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     if(attemptedCombos.count(mask)) return attemptedCombos[mask];
 
     int needed = quantity[customer];
+    for(int i = 0; i < counts.size(); i++){
+        
+    }
     
     return false;
 }
