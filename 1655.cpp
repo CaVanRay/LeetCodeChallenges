@@ -46,6 +46,8 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
             break;
         }
     }
+
+    if(attemptedCombos.count(mask)) return attemptedCombos[mask];
     
     return false;
 }
