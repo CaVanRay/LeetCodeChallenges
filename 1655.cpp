@@ -40,6 +40,9 @@ bool solutionChacker(int mask, vector<int>& counts, vector<int>& quantity){
     if(mask == (i << quantity.size()) - 1) return true;
 
     int customer = -1;
+    for(int i = 0; i < quantity.size(); i++){
+        
+    }
     
     return false;
 }
