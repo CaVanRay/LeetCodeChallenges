@@ -56,7 +56,7 @@ bool solutionChecker(int mask, vector<int>& counts, vector<int>& quantity, unord
     for(int i = 0; i < counts.size(); i++){
         if(counts[i] >= needed){
             counts[i] -= needed;
-            if(solutionChecker(mask | (1 << customer), counts, quantity)){
+            if(solutionChecker(mask | (1 << customer), counts, quantity, attemptedCombos)){
                 return attemptedCombos[mask] = true;
             }
             counts[i] += needed;
