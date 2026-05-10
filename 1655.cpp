@@ -69,6 +69,7 @@ class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
 
+        // Variable declarations
         unordered_map <int, int> combinedDupes;
         unordered_map <int, bool> attemptedCombos;
         vector<int> dupeCounts;
