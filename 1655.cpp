@@ -39,7 +39,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
 
 
 
-bool solutionChecker(int mask, vector<int>& counts, vector<int>& quantity, unordered_map<int, bool>& attemptedCombos){
+bool solutionChecker(int mask, vector<int> counts, vector<int>& quantity, unordered_map<int, bool>& attemptedCombos){
     if(mask == (1 << quantity.size()) - 1) return true;
 
     int customer = -1;
@@ -59,7 +59,7 @@ bool solutionChecker(int mask, vector<int>& counts, vector<int>& quantity, unord
             if(solutionChecker(mask | (1 << customer), counts, quantity, attemptedCombos)){
                 return attemptedCombos[mask] = true;
             }
-            counts[i] += needed;
+           //counts[i] += needed;
         }
     } 
     return attemptedCombos[mask] = false;
