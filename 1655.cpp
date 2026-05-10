@@ -40,7 +40,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
 
 //****************************************************************************************************
 
-bool solutionChecker(int mask, vector<int>& counts, vector<int>& quantity, unordered_map<int, bool>& attemptedCombos){
+bool solutionChecker(int mask, vector<int>& dupeCounts, vector<int>& quantity, unordered_map<int, bool>& attemptedCombos){
     if(mask == (1 << quantity.size()) - 1) return true;
 
     int customer = -1;
@@ -54,13 +54,13 @@ bool solutionChecker(int mask, vector<int>& counts, vector<int>& quantity, unord
     if(attemptedCombos.count(mask)) return attemptedCombos[mask];
 
     int needed = quantity[customer];
-    for(int i = 0; i < counts.size(); i++){
-        if(counts[i] >= needed){
-            counts[i] -= needed;
-            if(solutionChecker(mask | (1 << customer), counts, quantity, attemptedCombos)){
+    for(int i = 0; i < dupeCounts.size(); i++){
+        if(dupeCounts[i] >= needed){
+            dupeCounts[i] -= needed;
+            if(solutionChecker(mask | (1 << customer), dupeCounts, quantity, attemptedCombos)){
                 return attemptedCombos[mask] = true;
             }
-           counts[i] += needed;
+           dupeCounts[i] += needed;
         }
     } 
     return attemptedCombos[mask] = false;
