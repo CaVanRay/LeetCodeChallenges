@@ -65,6 +65,7 @@ bool solutionChecker(int mask, vector<int> counts, vector<int>& quantity, unorde
     return attemptedCombos[mask] = false;
 }
 
+//****************************************************************************************************
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
@@ -91,3 +92,4 @@ public:
         
     }
 };
+//****************************************************************************************************
