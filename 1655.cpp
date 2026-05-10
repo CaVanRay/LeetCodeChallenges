@@ -86,6 +86,7 @@ public:
             dupeCounts.push_back(pair.second);
         }
 
+        // return the solution provided by recursive function solutionChecker()
         return(solutionChecker(0, dupeCounts, quantity, attemptedCombos));
         
     }
