@@ -77,7 +77,8 @@ public:
         // Sorting provided info from largest to smallest
         sort(nums.begin(), nums.end(), greater<int>());
         sort(quantity.begin(), quantity.end(), greater<int>());
-        
+
+        // Counting the different numbers of duplicates
         for(auto& number : nums){
             combinedDupes[number] += 1;
         }
