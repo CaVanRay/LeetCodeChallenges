@@ -38,6 +38,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
 
 
 
+//****************************************************************************************************
 
 bool solutionChecker(int mask, vector<int> counts, vector<int>& quantity, unordered_map<int, bool>& attemptedCombos){
     if(mask == (1 << quantity.size()) - 1) return true;
@@ -66,6 +67,7 @@ bool solutionChecker(int mask, vector<int> counts, vector<int>& quantity, unorde
 }
 
 //****************************************************************************************************
+
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
@@ -92,4 +94,5 @@ public:
         
     }
 };
+
 //****************************************************************************************************
