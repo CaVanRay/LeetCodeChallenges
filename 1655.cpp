@@ -68,22 +68,22 @@ bool solutionChecker(int mask, vector<int> counts, vector<int>& quantity, unorde
 class Solution {
 public:
     bool canDistribute(vector<int>& nums, vector<int>& quantity) {
-// variable declarations
-unordered_map <int, int> combinedDupes;
-unordered_map <int, bool> attemptedCombos;
-vector<int> dupeCounts;
 
-sort(nums.begin(), nums.end(), greater<int>());
-sort(quantity.begin(), quantity.end(), greater<int>());
+        unordered_map <int, int> combinedDupes;
+        unordered_map <int, bool> attemptedCombos;
+        vector<int> dupeCounts;
+
+        sort(nums.begin(), nums.end(), greater<int>());
+        sort(quantity.begin(), quantity.end(), greater<int>());
         
-for(auto& number : nums){
-    combinedDupes[number] += 1;
-}
-for(auto& pair : combinedDupes){
-    dupeCounts.push_back(pair.second);
-}
+        for(auto& number : nums){
+            combinedDupes[number] += 1;
+        }
+        for(auto& pair : combinedDupes){
+            dupeCounts.push_back(pair.second);
+        }
 
-return(solutionChecker(0, dupeCounts, quantity, attemptedCombos));
+        return(solutionChecker(0, dupeCounts, quantity, attemptedCombos));
         
     }
 };
