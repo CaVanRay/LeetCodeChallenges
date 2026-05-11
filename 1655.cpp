@@ -1,15 +1,15 @@
-/*****************************************************************************************************************
-|    Challenge #: 1655                                                                                           |     
-|    Difficulty: Hard                                                                                            |    
-|    Title: Distribute Repeating Integers                                                                        |    
-|    Author: Cavan Ray Theiss                                                                                    |            
-|                                                                                                                |            
-|    Description:                                                                                                |            
-|                                                                                                                |                                
-|    Given a list of various repeating number and a                                                              |          
-|    list of requested amounts of repeating numbers                                                              |  
-|    return true/false if the requests can be filled                                                             |           
-*****************************************************************************************************************/
+/**************************************************************************************
+|    Challenge #: 1655                                                                |     
+|    Difficulty: Hard                                                                 |    
+|    Title: Distribute Repeating Integers                                             |    
+|    Author: Cavan Ray Theiss                                                         |            
+|                                                                                     |            
+|    Description:                                                                     |            
+|                                                                                     |                                
+|    Given a list of various repeating number and a                                   |          
+|    list of requested amounts of repeating numbers                                   |  
+|    return true/false if the requests can be filled                                  |           
+**************************************************************************************/
 
 
 bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
