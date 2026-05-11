@@ -13,13 +13,21 @@
 
 
 bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
+
+    // if no customers left, all orders have been successfully filled
     if(customer == quantity.size()){
         return true;
     }
 
+    // current order to focus on filling
     int needed = quantity[customer];
 
+    // Check inventory of duplicates against current order
     for(int i = 0; i < counts.size(); i++){
+
+        // if item in inventory is larger or equal to order, remove what is taken
+        // then move onto next order to fill
+        // when the next order returns true, return true for this order (recursion)
         if(counts[i] >= needed){
             counts[i] -= needed;
             if(solutionChecker(customer + 1, counts, quantity)){
@@ -28,6 +36,7 @@ bool solutionChecker(int customer, vector<int>& counts, vector<int>& quantity){
             counts[i] += needed;
         }
     }
+    // if this point is reached, we were unsuccessful in filling all orders
     return false;
 }
 
