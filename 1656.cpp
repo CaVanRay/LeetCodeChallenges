@@ -11,6 +11,8 @@ values in ascending order only when they form a continuous, sorted sequence
 starting from the current pointer position. The pointer advances only when a 
 consecutive value is inserted
 
+*/
+
 class OrderedStream {
 public:
     OrderedStream(int n) {
@@ -28,4 +30,3 @@ public:
  * vector<string> param_1 = obj->insert(idKey,value);
  */
 
-*/
