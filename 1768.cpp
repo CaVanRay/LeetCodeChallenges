@@ -21,14 +21,15 @@ public:
       int k = 0;
       for(char letter : word1){
         word3.push_back(letter);
-        if(k <= word2.size()){
+        if(k < word2.size()){
           word3.push_back(word2[k]);
         }
         k++;
       }
-      while(k <= word2.size()){
+      while(k < word2.size()){
         word3.push_back(word2[k]);
-        k++
-      } 
+        k++;
+      }
+      return word3;
     }
 };
