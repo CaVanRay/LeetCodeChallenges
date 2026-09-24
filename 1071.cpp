@@ -39,6 +39,8 @@ Output: ""
 class Solution {
 public:
     string gcdOfStrings(string str1, string str2) {
+        string str3;
         
+        return str3;
     }
 };
