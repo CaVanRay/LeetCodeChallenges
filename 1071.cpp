@@ -43,6 +43,10 @@ public:
 
         /*
         NOTES TO SELF:
+        1. find smaller of the 2 strings
+        2. iterate through both one character at a time
+        3. shrink/start over with each failure
+        4. once end is reach return current divisor
         */
         
         return str3;
