@@ -10,3 +10,10 @@ For two strings s and t, we say "t divides s" if and only if s = t + t + t + ...
 
 Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
 */
+
+class Solution {
+public:
+    string gcdOfStrings(string str1, string str2) {
+        
+    }
+};
