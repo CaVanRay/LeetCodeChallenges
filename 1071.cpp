@@ -40,6 +40,10 @@ class Solution {
 public:
     string gcdOfStrings(string str1, string str2) {
         string str3;
+
+        /*
+        NOTES TO SELF:
+        */
         
         return str3;
     }
